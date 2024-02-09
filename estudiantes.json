@@ -1,0 +1,156 @@
+[
+  {
+    "id": 1,
+    "nombres": "Ana",
+    "apellidos": "Gómez",
+    "direccion": "Calle 123, Ciudad A",
+    "acudiente": "Juan Gómez",
+    "telefono_celular": "3123456789",
+    "telefono_fijo": "4123456789",
+    "estado": "Inscrito",
+    "riesgo": "Bajo"
+  },
+  {
+    "id": 3,
+    "nombres": "Elena",
+    "apellidos": "Martínez",
+    "direccion": "Carrera 789, Ciudad C",
+    "acudiente": "Miguel Martínez",
+    "telefono_celular": "3109876543",
+    "telefono_fijo": "4323456789",
+    "estado": "Cursando",
+    "riesgo": "Alto"
+  },
+  {
+    "id": 4,
+    "nombres": "Juan",
+    "apellidos": "Rodríguez",
+    "direccion": "Calle 567, Ciudad A",
+    "acudiente": "María Rodríguez",
+    "telefono_celular": "3176543210",
+    "telefono_fijo": "4423456789",
+    "estado": "Graduado",
+    "riesgo": "Moderado"
+  },
+  {
+    "id": 5,
+    "nombres": "Luis",
+    "apellidos": "García",
+    "direccion": "Avenida 678, Ciudad B",
+    "acudiente": "Laura García",
+    "telefono_celular": "3187654321",
+    "telefono_fijo": "4523456789",
+    "estado": "Expulsado",
+    "riesgo": "Alto"
+  },
+  {
+    "id": 6,
+    "nombres": "Laura",
+    "apellidos": "Pérez",
+    "direccion": "Carrera 890, Ciudad C",
+    "acudiente": "Pedro Pérez",
+    "telefono_celular": "3112345678",
+    "telefono_fijo": "4623456789",
+    "estado": "Retirado",
+    "riesgo": "Bajo"
+  },
+  {
+    "id": 7,
+    "nombres": "Miguel",
+    "apellidos": "Sánchez",
+    "direccion": "Calle 123, Ciudad A",
+    "acudiente": "Ana Sánchez",
+    "telefono_celular": "3123456789",
+    "telefono_fijo": "4723456789",
+    "estado": "Inscrito",
+    "riesgo": "Moderado"
+  },
+  {
+    "id": 8,
+    "nombres": "Sofía",
+    "apellidos": "Gutiérrez",
+    "direccion": "Avenida 234, Ciudad B",
+    "acudiente": "Javier Gutiérrez",
+    "telefono_celular": "3198765432",
+    "telefono_fijo": "4823456789",
+    "estado": "Aprobado",
+    "riesgo": "Alto"
+  },
+  {
+    "id": 9,
+    "nombres": "Pedro",
+    "apellidos": "López",
+    "direccion": "Carrera 567, Ciudad C",
+    "acudiente": "Carmen López",
+    "telefono_celular": "3109876543",
+    "telefono_fijo": "4923456789",
+    "estado": "Cursando",
+    "riesgo": "Bajo"
+  },
+  {
+    "id": 10,
+    "nombres": "María",
+    "apellidos": "Fernández",
+    "direccion": "Calle 678, Ciudad A",
+    "acudiente": "Carlos Fernández",
+    "telefono_celular": "3176543210",
+    "telefono_fijo": "5023456789",
+    "estado": "Graduado",
+    "riesgo": "Moderado"
+  },
+  {
+    "id": 11,
+    "nombres": "Javier",
+    "apellidos": "Díaz",
+    "direccion": "Avenida 789, Ciudad B",
+    "acudiente": "Sofía Díaz",
+    "telefono_celular": "3187654321",
+    "telefono_fijo": "5123456789",
+    "estado": "Expulsado",
+    "riesgo": "Alto"
+  },
+  {
+    "id": 12,
+    "nombres": "Carmen",
+    "apellidos": "Rojas",
+    "direccion": "Carrera 890, Ciudad C",
+    "acudiente": "Juan Rojas",
+    "telefono_celular": "3112345678",
+    "telefono_fijo": "5223456789",
+    "estado": "Retirado",
+    "riesgo": "Moderado"
+  },
+  {
+    "id": 13,
+    "nombres": "Alejandro",
+    "apellidos": "Santos",
+    "direccion": "Calle 123, Ciudad A",
+    "acudiente": "Isabel Santos",
+    "telefono_celular": "3123456789",
+    "telefono_fijo": "5323456789",
+    "estado": "Inscrito",
+    "riesgo": "Alto"
+  },
+  {
+    "id": 14,
+    "nombres": "Diana",
+    "apellidos": "García",
+    "direccion": "Avenida 234, Ciudad B",
+    "acudiente": "Andrés García",
+    "telefono_celular": "3198765432",
+    "telefono_fijo": "5423456789",
+    "estado": "Aprobado",
+    "riesgo": "Bajo"
+  },
+  {
+    "id": 15,
+    "nombres": "Roberto",
+    "apellidos": "Pérez",
+    "direccion": "Carrera 567, Ciudad C",
+    "acudiente": "Carolina Pérez",
+    "telefono_celular": "3109876543",
+    "telefono_fijo": "5523456789",
+    "estado": "Cursando",
+    "riesgo": "Moderado"
+  }
+]
