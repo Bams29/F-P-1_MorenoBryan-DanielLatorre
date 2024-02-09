@@ -1,5 +1,5 @@
 import json
-
+ 
 def cargar_datos():
     try:
         with open("estudiantes.json", "r", encoding="utf-8") as file:
