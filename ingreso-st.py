@@ -99,6 +99,40 @@ def modificar_clase():
     guardar_datos2(clases)
     print(f"Clase {clase_seleccionada} modificada exitosamente.")
 
+def listar_estudiantes_inscritos():
+    estudiantes = cargar_datos()
+    inscritos = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Inscrito"]
+
+    if not inscritos:
+        print("No hay estudiantes inscritos.")
+        return
+
+    print("Listado de estudiantes inscritos:")
+    for estudiante in inscritos:
+        print(f"ID: {estudiante['id']}, Nombre: {estudiante['nombres']}")
+
+def agregar_notas_promedio(id_estudiante):
+    estudiantes = cargar_datos()
+
+    for estudiante in estudiantes:
+        if estudiante["id"] == id_estudiante:
+            nota_teoria = float(input("Ingrese la nota teórica: "))
+            nota_practica = float(input("Ingrese la nota práctica: "))
+
+            promedio = (nota_teoria + nota_practica) / 2
+            print(f"El promedio es: {promedio}")
+
+            if promedio >= 60:
+                estudiante["estado"] = "Aprobado"
+            else:
+                estudiante["estado"] = "No aprobado"
+
+            guardar_datos(estudiantes)
+            print(f"Estado actualizado a: {estudiante['estado']}")
+            break
+    else:
+        print(f"Estudiante con ID {id_estudiante} no encontrado.")
+
 # Menú de opciones
 estudiantes = cargar_datos()
 guardar_datos(estudiantes)
@@ -108,8 +142,9 @@ while True:
     print("2. Editar estudiante")
     print("3. Eliminar estudiante")
     print("4. Modificar clase")
-    print("5. Salir")
-    opcion = input("Seleccione una opción (1-5): ")
+    print("5. Agregar notas y actualizar estado")
+    print("6. Salir")
+    opcion = input("Seleccione una opción (1-7): ")
 
     if opcion == "1":
         agregar_estudiante()
@@ -132,7 +167,11 @@ while True:
     elif opcion == "4":
         modificar_clase()
     elif opcion == "5":
+        listar_estudiantes_inscritos()
+        id_estudiante = int(input("Ingrese el ID del estudiante al que desea agregar notas: "))
+        agregar_notas_promedio(id_estudiante)
+    elif opcion == "6":
         print("Saliendo del programa.")
         break
     else:
-        print("Opción no válida. Por favor, ingrese una opción válida (1-5).")
+        print("Opción no válida. Por favor, ingrese una opción válida (1-7).")
