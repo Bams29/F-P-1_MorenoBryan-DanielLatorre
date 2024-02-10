@@ -1,38 +1,43 @@
 {
-  "clases": [
-    {
-      "nb": 1,
-      "duracion": "06:00-10:00",
-      "ruta": "java",
-      "profesor": "juan",
-      "aula": "spuntik"
-    },
-    {
-      "nb": 2,
-      "duracion": "10:30-01:30",
-      "ruta": "java",
-      "profesor": "juan",
-      "aula": "spuntik"
-    },
-    {
-      "nb": 3,
-      "duracion": "02:00-06:00",
-      "ruta": "3",
-      "profesor": "3",
-      "aula": "3"
-    },
-    {
-      "nb": 4,
-      "duracion": "06:30-9:30",
-      "ruta": "sin especificar",
-      "profesor": "sin especificar",
-      "aula": "sin especificar"
-    }
-  ],
-  "profesores": [],
-  "aulas": [
-    "spuntik",
-    "apolo",
-    "kepler"
-  ]
+    "clases": [
+
+        {
+            "nb": 1,
+            "duracion": "06:00-10:00",
+            "ruta": "sin especificar",
+            "profesor": "sin especificar",
+            "aula": "sin especificar"
+        },
+        {
+            "nb": 2,
+            "duracion": "10:30-01:30",
+            "ruta": "sin especificar",
+            "profesor":"sin especificar",
+            "aula": "sin especificar"
+        },
+        {
+            "nb": 3,
+            "duracion": "02:00-06:00",
+            "ruta": "sin especificar",
+            "profesor":"sin especificar",
+            "aula": "sin especificar"
+        },{
+            "nb": 4,
+            "duracion": "06:30-9:30",
+            "ruta": "sin especificar",
+            "profesor":"sin especificar",
+            "aula": "sin especificar"
+        }
+    ],
+
+    "profesores": [
+        
+    ],
+
+    "aulas": [
+        "spuntik","apolo","kepler"
+    ],
+    "rutas":[
+        "NodeJS","Java","NetCore"
+    ]
 }
