@@ -144,7 +144,7 @@ while True:
     print("4. Modificar clase")
     print("5. Agregar notas y actualizar estado")
     print("6. Salir")
-    opcion = input("Seleccione una opción (1-7): ")
+    opcion = input("Seleccione una opción (1-6): ")
 
     if opcion == "1":
         agregar_estudiante()
@@ -174,4 +174,4 @@ while True:
         print("Saliendo del programa.")
         break
     else:
-        print("Opción no válida. Por favor, ingrese una opción válida (1-7).")
+        print("Opción no válida. Por favor, ingrese una opción válida (1-6).")
