@@ -75,6 +75,16 @@ def editar_clase(n_clase, nueva_informacion):
     else:
         print(f"Clase {n_clase} no encontrada.")
 
+def agregar_ruta():
+    nueva_ruta = input("Ingrese la nueva ruta de estudio: ")
+    clases = cargar_datos2()  # Cargar datos de las clases
+    rutas = clases.get("rutas", [])  # Obtener la lista de rutas existente o una lista vacía si no hay
+    rutas.append(nueva_ruta)  # Agregar la nueva ruta a la lista de rutas
+    clases["rutas"] = rutas  # Actualizar las rutas en los datos de las clases
+    guardar_datos2(clases)  # Guardar los datos actualizados
+    print("Nueva ruta agregada exitosamente.")
+    return
+
 def modificar_clase():
     clases = cargar_datos2()  # Cargar datos de las clases
     print("Seleccione la clase que desea modificar:")
@@ -143,8 +153,9 @@ while True:
     print("3. Eliminar estudiante")
     print("4. Modificar clase")
     print("5. Agregar notas y actualizar estado")
-    print("6. Salir")
-    opcion = input("Seleccione una opción (1-6): ")
+    print("6. Agregar ruta de estudio")
+    print("7. Salir")
+    opcion = input("Seleccione una opción (1-7): ")
 
     if opcion == "1":
         agregar_estudiante()
@@ -171,7 +182,11 @@ while True:
         id_estudiante = int(input("Ingrese el ID del estudiante al que desea agregar notas: "))
         agregar_notas_promedio(id_estudiante)
     elif opcion == "6":
+        agregar_ruta()
+    elif opcion == "7":
         print("Saliendo del programa.")
         break
     else:
-        print("Opción no válida. Por favor, ingrese una opción válida (1-6).")
+        print("Opción no válida. Por favor, ingrese una opción válida (1-7).")
+
+        
