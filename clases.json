@@ -3,16 +3,20 @@
     {
       "nb": 1,
       "duracion": "06:00-10:00",
-      "ruta": "sin especificar",
-      "profesor": "sin especificar",
-      "aula/s": "sin especificar"
+      "ruta": [
+        "Java",
+        "NetCore",
+        "Java"
+      ],
+      "profesor": "Pedro",
+      "aula/s": "Sputnik"
     },
     {
       "nb": 2,
       "duracion": "10:30-01:30",
-      "ruta": "java",
-      "profesor": "juan",
-      "aula/s": "spuntik"
+      "ruta": "sin especificar",
+      "profesor": "sin especificar",
+      "aula/s": "sin especificar"
     },
     {
       "nb": 3,
@@ -64,8 +68,8 @@
     }
   ],
   "aulas": [
-    "spuntik",
-    "apolo",
+    "Sputnik",
+    "Apolo",
     "Artemis"
   ],
   "rutas": [
