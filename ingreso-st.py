@@ -137,7 +137,7 @@ def agregar_notas_promedio(Ti_estudiante):
     else:
         print(f"Estudiante con TI {Ti_estudiante} no encontrado.")
 
-# Menú de opciones
+# ---------------Menú de opciones-------------- 🐀 💎
 while True:
     print("\n--- Menú Principal ---")
     print("1. Agregar nuevo estudiante")
