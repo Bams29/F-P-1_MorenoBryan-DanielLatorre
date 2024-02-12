@@ -14,7 +14,7 @@ def cargar_datos2():
     except FileNotFoundError:
         return []
 
-def cargar_datos3():
+def cargar_grupos():
     try:
         with open("grupos.json", "r", encoding="utf-8") as file:
             return json.load(file)
@@ -29,11 +29,15 @@ def guardar_datos2(datos):
     with open("clases.json", "w", encoding="utf-8") as file:
         json.dump(datos, file, indent=2, ensure_ascii=False)
 
+def guardar_grupos(grupos):
+    with open("grupos.json", "w", encoding="utf-8") as file:
+        json.dump(grupos, file, indent=2, ensure_ascii=False)
+
 def agregar_estudiante():
     nuevo_estudiante = {
         "Ti": input("Ingrese el número de TIentificación del estudiante: "),
         "nombres": input("Ingrese el nombre del estudiante: "),
-        "apellidos": input("Ingrese los apellidos del estudiante: "),
+        "apellTIos": input("Ingrese los apellTIos del estudiante: "),
         "direccion": input("Ingrese la dirección del estudiante: "),
         "acudiente": input("Ingrese el nombre del acudiente: "),
         "telefono_celular": input("Ingrese el teléfono celular del estudiante: "),
@@ -144,6 +148,38 @@ def agregar_notas_promedio(Ti_estudiante):
     else:
         print(f"Estudiante con TI {Ti_estudiante} no encontrado.")
 
+def agregar_estudiante_a_grupo():
+    grupos = cargar_grupos()
+
+    print("Grupos disponibles:")
+    for grupo, info in grupos.items():
+        print(f"{grupo}: Clase {info['clase']}")
+
+    grupo_elegido = input("Seleccione el grupo al que desea agregar estudiantes: ")
+
+    if grupo_elegido not in grupos:
+        print("Grupo no válido.")
+        return
+
+    cantidad_estudiantes = int(input("Ingrese la cantidad de estudiantes que desea agregar: "))
+
+    for _ in range(cantidad_estudiantes):
+        nuevo_estudiante = {
+            "Ti": input("Ingrese el número de identificación del estudiante: "),
+            "nombres": input("Ingrese el nombre del estudiante: "),
+            "apellidos": input("Ingrese los apellidos del estudiante: "),
+            "direccion": input("Ingrese la dirección del estudiante: "),
+            "acudiente": input("Ingrese el nombre del acudiente: "),
+            "telefono_celular": input("Ingrese el teléfono celular del estudiante: "),
+            "telefono_fijo": input("Ingrese el teléfono fijo del estudiante: "),
+            "estado": input("Ingrese el estado del estudiante: "),
+            "riesgo": input("Ingrese el riesgo del estudiante: ")
+        }
+        grupos[grupo_elegido]["Campers"].append(nuevo_estudiante)
+
+    guardar_grupos(grupos)
+    print(f"Estudiantes agregados al grupo {grupo_elegido} correctamente.")
+
 # ---------------Menú de opciones-------------- 🐀 💎
 while True:
     print("\n--- Menú Principal ---")
@@ -154,9 +190,10 @@ while True:
     print("5. Agregar notas y actualizar estado del estudiante")
     print("6. Agregar nueva ruta de estudio")
     print("7. Listar estudiantes inscritos")
-    print("8. Salir del programa")
+    print("8. Agregar estudiantes a un grupo")
+    print("9. Salir del programa")
     
-    opcion = input("\nSeleccione una opción (1-8): ")
+    opcion = input("\nSeleccione una opción (1-9): ")
 
     if opcion == "1":
         agregar_estudiante()
@@ -187,8 +224,10 @@ while True:
     elif opcion == "7":
         listar_estudiantes_inscritos()
     elif opcion == "8":
+        agregar_estudiante_a_grupo()
+    elif opcion == "9":
         print("Saliendo del programa.")
         break
     else:
-        print("Opción no válida. Por favor, ingrese una opción válida (1-8).")
+        print("Opción no válida. Por favor, ingrese una opción válida (1-9).")
 

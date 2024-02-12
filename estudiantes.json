@@ -11,7 +11,7 @@
     "riesgo": "Bajo"
   },
   {
-    "Ti": "331233246",
+    "Ti": "2",
     "nombres": "Elena",
     "apellidos": "Martínez",
     "direccion": "Carrera 789, Ciudad C",
@@ -174,16 +174,5 @@
     "telefono_fijo": "616",
     "estado": "Aprobado",
     "riesgo": "Alto"
-  },
-  {
-    "Ti": "1",
-    "nombres": "23",
-    "apellidos": "23",
-    "direccion": "32",
-    "acudiente": "23",
-    "telefono_celular": "23",
-    "telefono_fijo": "23",
-    "estado": "23",
-    "riesgo": "23"
   }
 ]
