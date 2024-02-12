@@ -163,5 +163,27 @@
     "telefono_fijo": "no tiene",
     "estado": "inscrito",
     "riesgo": "bajo"
+  },
+  {
+    "Ti": "23",
+    "nombres": "kenneth",
+    "apellidos": "ceballos",
+    "direccion": "cra 13",
+    "acudiente": "Sndra",
+    "telefono_celular": "321",
+    "telefono_fijo": "616",
+    "estado": "Aprobado",
+    "riesgo": "Alto"
+  },
+  {
+    "Ti": "1",
+    "nombres": "23",
+    "apellidos": "23",
+    "direccion": "32",
+    "acudiente": "23",
+    "telefono_celular": "23",
+    "telefono_fijo": "23",
+    "estado": "23",
+    "riesgo": "23"
   }
 ]

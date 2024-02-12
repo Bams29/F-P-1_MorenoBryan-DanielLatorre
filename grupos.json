@@ -1,29 +1,45 @@
 {
-    "P1":{
-        "Campers":[],
-        "clase":[]
-    },
-    "M1":{
-        "Campers":[],
-        "clase":[]
-    },
-    "M2":{
-        "Campers":[],
-        "clase":[]
-    },
-    "M3":{
-        "Campers":[],
-        "clase":[]
-    },
-    "E3":{
-        "Campers":[],
-        "clase":[]
-    },
-    "U2":{
-        "Campers":[],
-        "clase":[]
-    }
-
-
-
+  "P1": {
+    "Campers": [
+      "pepe",
+      "2",
+      "kenneth ceballos",
+      {
+        "Ti": "23",
+        "nombres": "pepe",
+        "apellidos": "pelez",
+        "direccion": "cra 12",
+        "acudiente": "manolete",
+        "telefono_celular": "312344544",
+        "telefono_fijo": "null",
+        "estado": "aprovado",
+        "riesgo": "bajo"
+      }
+    ],
+    "clase": []
+  },
+  "M1": {
+    "Campers": [
+      "pedro"
+    ],
+    "clase": []
+  },
+  "M2": {
+    "Campers": [
+      "2"
+    ],
+    "clase": []
+  },
+  "M3": {
+    "Campers": [],
+    "clase": []
+  },
+  "E3": {
+    "Campers": [],
+    "clase": []
+  },
+  "U2": {
+    "Campers": [],
+    "clase": []
+  }
 }
