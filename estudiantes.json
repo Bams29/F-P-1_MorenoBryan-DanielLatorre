@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "Ti": 1,
     "nombres": "Ana",
     "apellidos": "Gómez",
     "direccion": "Calle 123, Ciudad A",
@@ -11,7 +11,7 @@
     "riesgo": "Bajo"
   },
   {
-    "id": 3,
+    "Ti": 3,
     "nombres": "Elena",
     "apellidos": "Martínez",
     "direccion": "Carrera 789, Ciudad C",
@@ -22,7 +22,7 @@
     "riesgo": "Alto"
   },
   {
-    "id": 4,
+    "Ti": 4,
     "nombres": "Juan",
     "apellidos": "Rodríguez",
     "direccion": "Calle 567, Ciudad A",
@@ -33,7 +33,7 @@
     "riesgo": "Moderado"
   },
   {
-    "id": 5,
+    "Ti": 5,
     "nombres": "Luis",
     "apellidos": "García",
     "direccion": "Avenida 678, Ciudad B",
@@ -44,7 +44,7 @@
     "riesgo": "Alto"
   },
   {
-    "id": 6,
+    "Ti": 6,
     "nombres": "Laura",
     "apellidos": "Pérez",
     "direccion": "Carrera 890, Ciudad C",
@@ -55,7 +55,7 @@
     "riesgo": "Bajo"
   },
   {
-    "id": 7,
+    "Ti": 7,
     "nombres": "Miguel",
     "apellidos": "Sánchez",
     "direccion": "Calle 123, Ciudad A",
@@ -66,7 +66,7 @@
     "riesgo": "Moderado"
   },
   {
-    "id": 8,
+    "Ti": 8,
     "nombres": "Sofía",
     "apellidos": "Gutiérrez",
     "direccion": "Avenida 234, Ciudad B",
@@ -77,7 +77,7 @@
     "riesgo": "Alto"
   },
   {
-    "id": 9,
+    "Ti": 9,
     "nombres": "Pedro",
     "apellidos": "López",
     "direccion": "Carrera 567, Ciudad C",
@@ -88,7 +88,7 @@
     "riesgo": "Bajo"
   },
   {
-    "id": 10,
+    "Ti": 10,
     "nombres": "María",
     "apellidos": "Fernández",
     "direccion": "Calle 678, Ciudad A",
@@ -99,7 +99,7 @@
     "riesgo": "Moderado"
   },
   {
-    "id": 11,
+    "Ti": 11,
     "nombres": "Javier",
     "apellidos": "Díaz",
     "direccion": "Avenida 789, Ciudad B",
@@ -110,7 +110,7 @@
     "riesgo": "Alto"
   },
   {
-    "id": 12,
+    "Ti": 12,
     "nombres": "Carmen",
     "apellidos": "Rojas",
     "direccion": "Carrera 890, Ciudad C",
@@ -121,7 +121,7 @@
     "riesgo": "Moderado"
   },
   {
-    "id": 13,
+    "Ti": 13,
     "nombres": "Alejandro",
     "apellidos": "Santos",
     "direccion": "Calle 123, Ciudad A",
@@ -132,7 +132,7 @@
     "riesgo": "Alto"
   },
   {
-    "id": 14,
+    "Ti": 14,
     "nombres": "Diana",
     "apellidos": "García",
     "direccion": "Avenida 234, Ciudad B",
@@ -143,7 +143,7 @@
     "riesgo": "Bajo"
   },
   {
-    "id": 15,
+    "Ti": 15,
     "nombres": "Roberto",
     "apellidos": "Pérez",
     "direccion": "Carrera 567, Ciudad C",
@@ -152,5 +152,16 @@
     "telefono_fijo": "5523456789",
     "estado": "Cursando",
     "riesgo": "Moderado"
+  },
+  {
+    "Ti": "1102345678",
+    "nombres": "pedro",
+    "apellidos": "galar",
+    "direccion": "la cuesta",
+    "acudiente": "marisol",
+    "telefono_celular": "312345677",
+    "telefono_fijo": "no tiene",
+    "estado": "inscrito",
+    "riesgo": "bajo"
   }
 ]

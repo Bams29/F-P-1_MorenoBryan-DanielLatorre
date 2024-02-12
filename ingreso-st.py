@@ -24,6 +24,7 @@ def guardar_datos2(datos):
 
 def agregar_estudiante():
     nuevo_estudiante = {
+        "Ti": input("Ingrese el número de identificación del estudiante: "),
         "nombres": input("Ingrese el nombre del estudiante: "),
         "apellidos": input("Ingrese los apellidos del estudiante: "),
         "direccion": input("Ingrese la dirección del estudiante: "),
@@ -34,35 +35,31 @@ def agregar_estudiante():
         "riesgo": input("Ingrese el riesgo del estudiante: ")
     }
     estudiantes = cargar_datos()
-    if estudiantes:
-        nuevo_estudiante["id"] = max(estudiantes, key=lambda x: x.get("id", 0)).get("id", 0) + 1
-    else:
-        nuevo_estudiante["id"] = 1
     estudiantes.append(nuevo_estudiante)
     guardar_datos(estudiantes)
-    print(f"Nuevo estudiante agregado con ID {nuevo_estudiante['id']}.")
+    print(f"Nuevo estudiante agregado con ID {nuevo_estudiante['Ti']}.")
 
-def editar_estudiante(id_estudiante, nueva_informacion):
+def editar_estudiante(Ti_estudiante, nueva_informacion):
     estudiantes = cargar_datos()
     for estudiante in estudiantes:
-        if estudiante["id"] == id_estudiante:
+        if estudiante["Ti"] == Ti_estudiante:
             estudiante.update(nueva_informacion)
             guardar_datos(estudiantes)
-            print(f"Información del estudiante con ID {id_estudiante} actualizada correctamente.")
+            print(f"Información del estudiante con ID {Ti_estudiante} actualizada correctamente.")
             return
     else:
-        print(f"Estudiante con ID {id_estudiante} no encontrado.")
+        print(f"Estudiante con ID {Ti_estudiante} no encontrado.")
 
-def eliminar_estudiante(id):
+def eliminar_estudiante(Ti_estudiante):
     estudiantes = cargar_datos()
-    for estudiante in estudiantes[:]:  # Crear una copia de la lista de estudiantes
-        if estudiante["id"] == id:
+    for estudiante in estudiantes[:]:
+        if estudiante["Ti"] == Ti_estudiante:
             estudiantes.remove(estudiante)
             guardar_datos(estudiantes)
-            print(f"Estudiante con ID {id} eliminado correctamente.")
+            print(f"Estudiante con ID {Ti_estudiante} eliminado correctamente.")
             return
     else:
-        print(f"Estudiante con ID {id} no encontrado.")
+        print(f"Estudiante con ID {Ti_estudiante} no encontrado.")
 
 def editar_clase(n_clase, nueva_informacion):
     clases = cargar_datos2()
@@ -77,27 +74,25 @@ def editar_clase(n_clase, nueva_informacion):
 
 def agregar_ruta():
     nueva_ruta = input("Ingrese la nueva ruta de estudio: ")
-    clases = cargar_datos2()  # Cargar datos de las clases
-    rutas = clases.get("rutas", [])  # Obtener la lista de rutas existente o una lista vacía si no hay
-    rutas.append(nueva_ruta)  # Agregar la nueva ruta a la lista de rutas
-    clases["rutas"] = rutas  # Actualizar las rutas en los datos de las clases
-    guardar_datos2(clases)  # Guardar los datos actualizados
+    clases = cargar_datos2()
+    rutas = clases.get("rutas", [])
+    rutas.append(nueva_ruta)
+    clases["rutas"] = rutas
+    guardar_datos2(clases)
     print("Nueva ruta agregada exitosamente.")
     return
 
 def modificar_clase():
-    clases = cargar_datos2()  # Cargar datos de las clases
+    clases = cargar_datos2()
     print("Seleccione la clase que desea modificar:")
     for clase in clases["clases"]:
         print(f"Clase {clase['nb']}: Duración - {clase['duracion']}")
     clase_seleccionada = int(input("Ingrese el número de la clase que desea modificar: "))
 
-    # Obtener información para modificar la clase
     nuevo_profesor = input("Ingrese el nombre del nuevo profesor: ")
     nuevo_aula = input("Ingrese el nombre de la nueva aula: ")
     nueva_ruta = input("Ingrese la nueva ruta de estudio: ")
 
-    # Modificar la clase seleccionada
     for clase in clases["clases"]:
         if clase["nb"] == clase_seleccionada:
             clase["profesor"] = nuevo_profesor
@@ -105,7 +100,6 @@ def modificar_clase():
             clase["ruta"] = nueva_ruta
             break
 
-    # Guardar los datos actualizados
     guardar_datos2(clases)
     print(f"Clase {clase_seleccionada} modificada exitosamente.")
 
@@ -119,13 +113,13 @@ def listar_estudiantes_inscritos():
 
     print("Listado de estudiantes inscritos:")
     for estudiante in inscritos:
-        print(f"ID: {estudiante['id']}, Nombre: {estudiante['nombres']}")
+        print(f"ID: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
 
-def agregar_notas_promedio(id_estudiante):
+def agregar_notas_promedio(Ti_estudiante):
     estudiantes = cargar_datos()
 
     for estudiante in estudiantes:
-        if estudiante["id"] == id_estudiante:
+        if estudiante["Ti"] == Ti_estudiante:
             nota_teoria = float(input("Ingrese la nota teórica: "))
             nota_practica = float(input("Ingrese la nota práctica: "))
 
@@ -141,7 +135,7 @@ def agregar_notas_promedio(id_estudiante):
             print(f"Estado actualizado a: {estudiante['estado']}")
             break
     else:
-        print(f"Estudiante con ID {id_estudiante} no encontrado.")
+        print(f"Estudiante con ID {Ti_estudiante} no encontrado.")
 
 # Menú de opciones
 estudiantes = cargar_datos()
@@ -160,7 +154,7 @@ while True:
     if opcion == "1":
         agregar_estudiante()
     elif opcion == "2":
-        id_estudiante = int(input("Ingrese el ID del estudiante que desea editar: "))
+        Ti_estudiante = input("Ingrese el ID del estudiante que desea editar: ")
         nueva_informacion = {
             "nombres": input("Ingrese el nuevo nombre del estudiante: "),
             "apellidos": input("Ingrese los nuevos apellidos del estudiante: "),
@@ -171,16 +165,16 @@ while True:
             "estado": input("Ingrese el nuevo estado del estudiante: "),
             "riesgo": input("Ingrese el nuevo riesgo del estudiante: ")
         }
-        editar_estudiante(id_estudiante, nueva_informacion)
+        editar_estudiante(Ti_estudiante, nueva_informacion)
     elif opcion == "3":
-        id_estudiante = int(input("Ingrese el ID del estudiante que desea eliminar: "))
-        eliminar_estudiante(id_estudiante)
+        Ti_estudiante = input("Ingrese el ID del estudiante que desea eliminar: ")
+        eliminar_estudiante(Ti_estudiante)
     elif opcion == "4":
         modificar_clase()
     elif opcion == "5":
         listar_estudiantes_inscritos()
-        id_estudiante = int(input("Ingrese el ID del estudiante al que desea agregar notas: "))
-        agregar_notas_promedio(id_estudiante)
+        Ti_estudiante = input("Ingrese el ID del estudiante al que desea agregar notas: ")
+        agregar_notas_promedio(Ti_estudiante)
     elif opcion == "6":
         agregar_ruta()
     elif opcion == "7":
@@ -188,5 +182,6 @@ while True:
         break
     else:
         print("Opción no válida. Por favor, ingrese una opción válida (1-7).")
+
 
         
