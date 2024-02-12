@@ -29,7 +29,40 @@
       "aula/s": "sin especificar"
     }
   ],
-  "profesores": [],
+  "profesores": [
+    {
+      "nombre": "Pedro",
+      "rutas": [
+        "Java",
+        "NetCore",
+        "Java"
+      ]
+    },
+    {
+      "nombre": "Miguel",
+      "rutas": [
+        "Java",
+        "NetCore",
+        "Java"
+      ]
+    },
+    {
+      "nombre": "Manuel",
+      "rutas": [
+        "Java",
+        "NetCore",
+        "Java"
+      ]
+    },
+    {
+      "nombre": "Juan",
+      "rutas": [
+        "Java",
+        "NetCore",
+        "Java"
+      ]
+    }
+  ],
   "aulas": [
     "spuntik",
     "apolo",

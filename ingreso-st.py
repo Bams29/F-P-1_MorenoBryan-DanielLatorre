@@ -157,7 +157,7 @@ while True:
         Ti_estudiante = input("Ingrese el TI del estudiante que desea editar: ")
         nueva_informacion = {
             "nombres": input("Ingrese el nuevo nombre del estudiante: "),
-            "apellTIos": input("Ingrese los nuevos apellTIos del estudiante: "),
+            "apellTIos": input("Ingrese los nuevos apellidos del estudiante: "),
             "direccion": input("Ingrese la nueva dirección del estudiante: "),
             "acudiente": input("Ingrese el nuevo nombre del acudiente: "),
             "telefono_celular": input("Ingrese el nuevo teléfono celular del estudiante: "),
@@ -183,4 +183,4 @@ while True:
         print("Saliendo del programa.")
         break
     else:
-        print("Opción no válTIa. Por favor, ingrese una opción válTIa (1-8).")
+        print("Opción no válida. Por favor, ingrese una opción válida (1-8).")
