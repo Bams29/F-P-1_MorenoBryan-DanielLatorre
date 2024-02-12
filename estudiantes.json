@@ -121,14 +121,14 @@
     "riesgo": "Moderado"
   },
   {
-    "Ti": 13,
+    "Ti": "103458991",
     "nombres": "Alejandro",
     "apellidos": "Santos",
     "direccion": "Calle 123, Ciudad A",
     "acudiente": "Isabel Santos",
     "telefono_celular": "3123456789",
     "telefono_fijo": "5323456789",
-    "estado": "Inscrito",
+    "estado": "No aprobado",
     "riesgo": "Alto"
   },
   {
@@ -143,7 +143,7 @@
     "riesgo": "Bajo"
   },
   {
-    "Ti": 15,
+    "Ti": "103458990",
     "nombres": "Roberto",
     "apellidos": "Pérez",
     "direccion": "Carrera 567, Ciudad C",
