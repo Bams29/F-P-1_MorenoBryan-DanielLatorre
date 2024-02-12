@@ -41,6 +41,7 @@
     "NetCore",
     "html",
     "tu",
-    "nodeJS"
+    "nodeJS",
+    "hyml"
   ]
 }

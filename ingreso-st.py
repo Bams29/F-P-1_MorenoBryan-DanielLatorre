@@ -138,18 +138,18 @@ def agregar_notas_promedio(Ti_estudiante):
         print(f"Estudiante con ID {Ti_estudiante} no encontrado.")
 
 # Menú de opciones
-estudiantes = cargar_datos()
-guardar_datos(estudiantes)
-
 while True:
-    print("\n1. Agregar nuevo estudiante")
-    print("2. Editar estudiante")
+    print("\n--- Menú Principal ---")
+    print("1. Agregar nuevo estudiante")
+    print("2. Editar información de un estudiante")
     print("3. Eliminar estudiante")
-    print("4. Modificar clase")
-    print("5. Agregar notas y actualizar estado")
-    print("6. Agregar ruta de estudio")
-    print("7. Salir")
-    opcion = input("Seleccione una opción (1-7): ")
+    print("4. Modificar información de una clase")
+    print("5. Agregar notas y actualizar estado del estudiante")
+    print("6. Agregar nueva ruta de estudio")
+    print("7. Listar estudiantes inscritos")
+    print("8. Salir del programa")
+    
+    opcion = input("\nSeleccione una opción (1-8): ")
 
     if opcion == "1":
         agregar_estudiante()
@@ -178,7 +178,9 @@ while True:
     elif opcion == "6":
         agregar_ruta()
     elif opcion == "7":
+        listar_estudiantes_inscritos()
+    elif opcion == "8":
         print("Saliendo del programa.")
         break
     else:
-        print("Opción no válida. Por favor, ingrese una opción válida (1-7).")
+        print("Opción no válida. Por favor, ingrese una opción válida (1-8).")
