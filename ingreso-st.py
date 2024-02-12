@@ -14,6 +14,13 @@ def cargar_datos2():
     except FileNotFoundError:
         return []
 
+def cargar_datos3():
+    try:
+        with open("grupos.json", "r", encoding="utf-8") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return {}
+
 def guardar_datos(datos):
     with open("estudiantes.json", "w", encoding="utf-8") as file:
         json.dump(datos, file, indent=2, ensure_ascii=False)
@@ -26,7 +33,7 @@ def agregar_estudiante():
     nuevo_estudiante = {
         "Ti": input("Ingrese el número de TIentificación del estudiante: "),
         "nombres": input("Ingrese el nombre del estudiante: "),
-        "apellTIos": input("Ingrese los apellTIos del estudiante: "),
+        "apellidos": input("Ingrese los apellidos del estudiante: "),
         "direccion": input("Ingrese la dirección del estudiante: "),
         "acudiente": input("Ingrese el nombre del acudiente: "),
         "telefono_celular": input("Ingrese el teléfono celular del estudiante: "),
@@ -157,7 +164,7 @@ while True:
         Ti_estudiante = input("Ingrese el TI del estudiante que desea editar: ")
         nueva_informacion = {
             "nombres": input("Ingrese el nuevo nombre del estudiante: "),
-            "apellTIos": input("Ingrese los nuevos apellidos del estudiante: "),
+            "apellidos": input("Ingrese los nuevos apellidos del estudiante: "),
             "direccion": input("Ingrese la nueva dirección del estudiante: "),
             "acudiente": input("Ingrese el nuevo nombre del acudiente: "),
             "telefono_celular": input("Ingrese el nuevo teléfono celular del estudiante: "),
@@ -184,3 +191,4 @@ while True:
         break
     else:
         print("Opción no válida. Por favor, ingrese una opción válida (1-8).")
+
