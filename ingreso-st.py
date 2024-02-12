@@ -13,6 +13,13 @@ def cargar_datos2():
             return json.load(file)
     except FileNotFoundError:
         return []
+    
+def cargar_datos3():
+    try:
+        with open("grupos.json", "r", encoding="utf-8") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return []
 
 def guardar_datos(datos):
     with open("estudiantes.json", "w", encoding="utf-8") as file:
@@ -136,6 +143,10 @@ def agregar_notas_promedio(Ti_estudiante):
             break
     else:
         print(f"Estudiante con ID {Ti_estudiante} no encontrado.")
+        
+def modificar_grupos():
+    grupos = cargar_datos3()
+    print("selecciona el grupo que deseas modificar")
 
 # ---------------Menú de opciones-------------- 🐀 💎
 while True:
