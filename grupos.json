@@ -1,26 +1,50 @@
 {
-    "P1":{
-        "Campers":[],
-        "clase":[1]
-    },
-    "M1":{
-        "Campers":[],
-        "clase":[2]
-    },
-    "M2":{
-        "Campers":[],
-        "clase":[3]
-    },
-    "M3":{
-        "Campers":[],
-        "clase":[4]
-    },
-    "E3":{
-        "Campers":[],
-        "clase":[5]
-    },
-    "U2":{
-        "Campers":[],
-        "clase":[6]
-    }
+  "P1": {
+    "Campers": [],
+    "clase": [
+      1
+    ]
+  },
+  "M1": {
+    "Campers": [],
+    "clase": [
+      2
+    ]
+  },
+  "M2": {
+    "Campers": [
+      {
+        "Ti": "f",
+        "nombres": "f",
+        "apellidos": "f",
+        "direccion": "f",
+        "acudiente": "f",
+        "telefono_celular": "f",
+        "telefono_fijo": "f",
+        "estado": "f",
+        "riesgo": "f"
+      }
+    ],
+    "clase": [
+      3
+    ]
+  },
+  "M3": {
+    "Campers": [],
+    "clase": [
+      4
+    ]
+  },
+  "E3": {
+    "Campers": [],
+    "clase": [
+      5
+    ]
+  },
+  "U2": {
+    "Campers": [],
+    "clase": [
+      6
+    ]
+  }
 }
