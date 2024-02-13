@@ -1,6 +1,23 @@
 {
   "P1": {
-    "Campers": [],
+    "Campers": [
+      {
+        "Ti": "23",
+        "nombres": "kenneth",
+        "apellidos": "ceballos",
+        "direccion": "cra 13",
+        "acudiente": "Sndra",
+        "telefono_celular": "321",
+        "telefono_fijo": "616",
+        "estado": "Aprobado",
+        "riesgo": "Alto",
+        "mo1": "",
+        "mo2": "",
+        "mo3": "",
+        "mo4": "",
+        "mo5": ""
+      }
+    ],
     "clase": [
       1
     ]
@@ -12,19 +29,7 @@
     ]
   },
   "M2": {
-    "Campers": [
-      {
-        "Ti": "f",
-        "nombres": "f",
-        "apellidos": "f",
-        "direccion": "f",
-        "acudiente": "f",
-        "telefono_celular": "f",
-        "telefono_fijo": "f",
-        "estado": "f",
-        "riesgo": "f"
-      }
-    ],
+    "Campers": [],
     "clase": [
       3
     ]

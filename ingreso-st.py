@@ -225,6 +225,58 @@ def agregar_estudiante_a_grupo():
     guardar_grupos(grupos)
     print(f"Estudiantes agregados al grupo {grupo_elegido} correctamente.")
 
+def matricular_estudiantes():
+    estudiantes = cargar_datos()
+
+    # Filtrar estudiantes aprobados
+    aprobados = [estudiante for estudiante in estudiantes if estudiante["estado"].lower() == "aprobado"]
+
+    if not aprobados:
+        print("No hay estudiantes aprobados para matricular.")
+        return
+
+    # Mostrar estudiantes aprobados
+    print("Estudiantes Aprobados:")
+    for i, estudiante in enumerate(aprobados, start=1):
+        print(f"{i}. TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
+
+    # Pedir número de TI para matricular
+    while True:
+        opcion = input("Ingrese el numero del estudiante que desea matricular.")
+
+        try:
+            opcion = int(opcion)
+            if 1 <= opcion <= len(aprobados):
+                estudiante_elegido = aprobados[opcion - 1]
+                break
+            else:
+                print("Opción fuera de rango.")
+        except ValueError:
+            print("Por favor, ingrese un número válido.")
+
+    grupos = cargar_grupos()
+
+    # Mostrar grupos disponibles
+    print("Grupos disponibles:")
+    for grupo, info in grupos.items():
+        print(f"{grupo}: Clase {info['clase'][0]}")
+
+    # Pedir grupo al que matricular al estudiante
+    grupo_elegido = input("Seleccione el grupo al que desea matricular al estudiante: ")
+
+    if grupo_elegido not in grupos:
+        print("Grupo no válido.")
+        return
+
+    # Agregar estudiante al grupo
+    grupos[grupo_elegido]["Campers"].append(estudiante_elegido)
+    print(f"Estudiante {estudiante_elegido['nombres']} matriculado en el grupo {grupo_elegido} correctamente.")
+
+    # Guardar cambios en grupos.json
+    guardar_grupos(grupos)
+
+
+
 def menu_principal():
     print("\n--- Menú Principal ---")
     print("1. Iniciar Sesión como Coordinador")
@@ -244,8 +296,8 @@ def menu_coordinador():
     print("8. Listar estudiantes aprobados")
     print("9. Listar estudiantes reprobados")
     print("10. Listar todas las clases")
-    print("11. Listar todos los estudiantes")
-    print("12. Agregar estudiantes a un grupo")
+    print("11. Agregar estudiantes a un grupo")
+    print("12. Matricular estudiante")
     print("13. Salir del programa")
 
 def menu_trainer():
@@ -297,10 +349,9 @@ def iniciar_sesion_coordinador():
         elif opcion == "10":
             listar_clases()
         elif opcion == "11":
-            # Código para listar todos los estudiantes
-            pass
-        elif opcion == "12":
             agregar_estudiante_a_grupo()
+        elif opcion == "12":
+            matricular_estudiantes() 
         elif opcion == "13":
             print("Saliendo del programa.")
             break
