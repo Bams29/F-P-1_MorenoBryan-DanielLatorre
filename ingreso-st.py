@@ -121,7 +121,7 @@ def modificar_clase():
 
 def listar_estudiantes_inscritos():
     estudiantes = cargar_datos()
-    inscritos = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Inscrito"]
+    inscritos = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Inscrito" or estudiante["estado"] == "inscrito"]
 
     if not inscritos:
         print("No hay estudiantes inscritos.")
@@ -133,7 +133,7 @@ def listar_estudiantes_inscritos():
 
 def listar_estudiantes_aprobados():
     estudiantes = cargar_datos()
-    aprobados = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Aprobado"]
+    aprobados = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Aprobado" or estudiante["estado"] == "aprobado"]
 
     if not aprobados:
         print("No hay estudiantes Aprobados.")
@@ -145,7 +145,7 @@ def listar_estudiantes_aprobados():
 
 def listar_estudiantes_reprobados():
     estudiantes = cargar_datos()
-    reprobados = [estudiante for estudiante in estudiantes if estudiante["estado"] == "No Aprobado"]
+    reprobados = [estudiante for estudiante in estudiantes if estudiante["estado"] == "No Aprobado" or estudiante["estado"] == "No aprobado"]
 
     if not reprobados:
         print("No hay estudiantes reprobados.")
