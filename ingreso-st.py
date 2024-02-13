@@ -119,9 +119,25 @@ def modificar_clase():
     guardar_datos2(clases)
     print(f"Clase {clase_seleccionada} modificada exitosamente.")
 
+def listar_clases():
+    clases = cargar_datos2()
+    profesores = clases["profesores"]
+
+    print("Listado de clases:")
+    for clase in clases["clases"]:
+        print(f"Clase {clase['nb']}:")
+        print(f"  Duración: {clase['duracion']}")
+        if clase['profesor'] != 'sin especificar':
+            profesor = next((p['nombre'] for p in profesores if p['nombre'] == clase['profesor']), 'Desconocido')
+            print(f"  Profesor: {profesor}")
+        else:
+            print("  Profesor: sin especificar")
+        print(f"  Aula/s: {clase['aula/s']}")
+        print()
+
 def listar_estudiantes_inscritos():
     estudiantes = cargar_datos()
-    inscritos = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Inscrito"]
+    inscritos = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Inscrito" or estudiante["estado"] == "inscrito"]
 
     if not inscritos:
         print("No hay estudiantes inscritos.")
@@ -133,7 +149,7 @@ def listar_estudiantes_inscritos():
 
 def listar_estudiantes_aprobados():
     estudiantes = cargar_datos()
-    aprobados = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Aprobado"]
+    aprobados = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Aprobado" or estudiante["estado"] == "aprobado"]
 
     if not aprobados:
         print("No hay estudiantes Aprobados.")
@@ -141,6 +157,18 @@ def listar_estudiantes_aprobados():
 
     print("Listado de estudiantes Aprobados:")
     for estudiante in aprobados:
+        print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
+
+def listar_estudiantes_reprobados():
+    estudiantes = cargar_datos()
+    reprobados = [estudiante for estudiante in estudiantes if estudiante["estado"] == "No Aprobado" or estudiante["estado"] == "No aprobado"]
+
+    if not reprobados:
+        print("No hay estudiantes reprobados.")
+        return
+
+    print("Listado de estudiantes reprobados:")
+    for estudiante in reprobados:
         print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
 
 def agregar_notas_promedio(Ti_estudiante):
@@ -263,14 +291,11 @@ def iniciar_sesion_coordinador():
         elif opcion == "7":
             listar_estudiantes_inscritos()
         elif opcion == "8":
-            # Código para listar estudiantes aprobados
-            pass
+            listar_estudiantes_aprobados()
         elif opcion == "9":
-            # Código para listar estudiantes reprobados
-            pass
+            listar_estudiantes_reprobados()
         elif opcion == "10":
-            # Código para listar todas las clases
-            pass
+            listar_clases()
         elif opcion == "11":
             # Código para listar todos los estudiantes
             pass
@@ -288,8 +313,7 @@ def iniciar_sesion_trainer():
         opcion = input("\nSeleccione una opción (1-2): ")
 
         if opcion == "1":
-            # Código para listar todas las clases
-            pass
+            listar_clases()
         elif opcion == "2":
             print("Saliendo del programa.")
             break
