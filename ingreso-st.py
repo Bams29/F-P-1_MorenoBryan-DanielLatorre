@@ -119,6 +119,22 @@ def modificar_clase():
     guardar_datos2(clases)
     print(f"Clase {clase_seleccionada} modificada exitosamente.")
 
+def listar_clases():
+    clases = cargar_datos2()
+    profesores = clases["profesores"]
+
+    print("Listado de clases:")
+    for clase in clases["clases"]:
+        print(f"Clase {clase['nb']}:")
+        print(f"  Duración: {clase['duracion']}")
+        if clase['profesor'] != 'sin especificar':
+            profesor = next((p['nombre'] for p in profesores if p['nombre'] == clase['profesor']), 'Desconocido')
+            print(f"  Profesor: {profesor}")
+        else:
+            print("  Profesor: sin especificar")
+        print(f"  Aula/s: {clase['aula/s']}")
+        print()
+
 def listar_estudiantes_inscritos():
     estudiantes = cargar_datos()
     inscritos = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Inscrito" or estudiante["estado"] == "inscrito"]
@@ -279,8 +295,7 @@ def iniciar_sesion_coordinador():
         elif opcion == "9":
             listar_estudiantes_reprobados()
         elif opcion == "10":
-            # Código para listar todas las clases
-            pass
+            listar_clases()
         elif opcion == "11":
             # Código para listar todos los estudiantes
             pass
@@ -298,8 +313,7 @@ def iniciar_sesion_trainer():
         opcion = input("\nSeleccione una opción (1-2): ")
 
         if opcion == "1":
-            # Código para listar todas las clases
-            pass
+            listar_clases()
         elif opcion == "2":
             print("Saliendo del programa.")
             break
