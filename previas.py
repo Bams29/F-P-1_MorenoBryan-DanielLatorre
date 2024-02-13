@@ -18,8 +18,27 @@ def buscar_estudiante(estudiantes, nombre):
 
 # Función para guardar las notas en un archivo JSON
 def guardar_notas(notas):
+    try:
+        with open('notas.json', 'r') as archivo:
+            datos = json.load(archivo)
+    except FileNotFoundError:
+        datos = []
+
+    # Verificar si ya existen notas para este módulo
+    encontrado = False
+    if isinstance(datos, list):
+        for item in datos:
+            if isinstance(item, dict) and item.get('nombre_modulo') == notas['nombre_modulo']:
+                item['notas'].append(notas)
+                encontrado = True
+                break
+
+    if not encontrado:
+        datos.append({"nombre_modulo": notas['nombre_modulo'], "notas": [notas]})
+
     with open('notas.json', 'w') as archivo:
-        json.dump(notas, archivo)
+        json.dump(datos, archivo)
+
 
 # Función para ingresar las notas y calcular promedio de un módulo
 def ingresar_notas_modulo(nombre_modulo):
@@ -34,7 +53,7 @@ def ingresar_notas_modulo(nombre_modulo):
     # Solicitar ruta de estudio
     ruta_estudio = input("Ingrese la ruta de estudio: ")
 
-    return {"nombre_modulo": nombre_modulo, "nota1": nota1, "nota2": nota2, "nota3": nota3, "promedio": promedio, "ruta_estudio": ruta_estudio}
+    return {"nota1": nota1, "nota2": nota2, "nota3": nota3, "promedio": promedio, "ruta_estudio": ruta_estudio}
 
 # Función principal
 def main():
@@ -68,6 +87,7 @@ def main():
         notas_modulo = ingresar_notas_modulo(nombre_modulo_elegido)
 
         # Guardar las notas en un archivo JSON
+        notas_modulo['nombre_modulo'] = nombre_modulo_elegido
         guardar_notas(notas_modulo)
 
         print("Notas del módulo guardadas exitosamente.")
