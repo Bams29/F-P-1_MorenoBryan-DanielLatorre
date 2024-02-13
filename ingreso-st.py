@@ -35,9 +35,9 @@ def guardar_grupos(grupos):
 
 def agregar_estudiante():
     nuevo_estudiante = {
-        "Ti": input("Ingrese el número de TIentificación del estudiante: "),
+        "Ti": input("Ingrese el número de identificación del estudiante: "),
         "nombres": input("Ingrese el nombre del estudiante: "),
-        "apellTIos": input("Ingrese los apellTIos del estudiante: "),
+        "apellidos": input("Ingrese los apellidos del estudiante: "),
         "direccion": input("Ingrese la dirección del estudiante: "),
         "acudiente": input("Ingrese el nombre del acudiente: "),
         "telefono_celular": input("Ingrese el teléfono celular del estudiante: "),
@@ -235,4 +235,3 @@ while True:
         break
     else:
         print("Opción no válida. Por favor, ingrese una opción válida (1-9).")
-
