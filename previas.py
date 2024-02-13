@@ -1,9 +1,9 @@
 import json
 
 # Función para cargar datos de estudiantes desde un archivo JSON
-def cargar_estudiantes(estudiantes):
+def cargar_estudiantes(nombre_archivo):
     try:
-        with open("estudiantes.json", 'r') as archivo:
+        with open(nombre_archivo, 'r') as archivo:
             datos = json.load(archivo)
         return datos
     except FileNotFoundError:
@@ -38,6 +38,9 @@ def main():
         nota2 = float(input("Ingrese la segunda nota: "))
         nota3 = float(input("Ingrese la tercera nota: "))
 
+        # Solicitar la ruta de estudio
+        ruta_estudio = input("Ingrese la ruta de estudio: ")
+
         # Calcular porcentajes
         nota1 *= 0.1
         nota2 *= 0.3
@@ -52,7 +55,8 @@ def main():
             "nota1": nota1,
             "nota2": nota2,
             "nota3": nota3,
-            "promedio": promedio
+            "promedio": promedio,
+            "ruta_estudio": ruta_estudio
         }
         guardar_notas(notas)
 
