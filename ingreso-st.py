@@ -33,57 +33,9 @@ def guardar_grupos(grupos):
     with open("grupos.json", "w", encoding="utf-8") as file:
         json.dump(grupos, file, indent=2, ensure_ascii=False)
 
-def listar_clases():
-    clases = cargar_datos2()
-    print("--- Clases disponibles ---")
-    for clase in clases["clases"]:
-        print(f"Clase {clase['nb']}: Duración - {clase['duracion']}")
-
-def listar_estudiantes_inscritos():
-    estudiantes = cargar_datos()
-    inscritos = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Inscrito"]
-
-    if not inscritos:
-        print("No hay estudiantes inscritos.")
-        return
-
-    print("Listado de estudiantes inscritos:")
-    for estudiante in inscritos:
-        print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
-
-def listar_estudiantes():
-    estudiantes = cargar_datos()
-    print("--- Listado de estudiantes ---")
-    for estudiante in estudiantes:
-        print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
-
-def listar_estudiantes_aprobados():
-    estudiantes = cargar_datos()
-    aprobados = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Aprobado"]
-
-    if not aprobados:
-        print("No hay estudiantes aprobados.")
-        return
-
-    print("Listado de estudiantes aprobados:")
-    for estudiante in aprobados:
-        print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
-
-def listar_estudiantes_reprobados():
-    estudiantes = cargar_datos()
-    reprobados = [estudiante for estudiante in estudiantes if estudiante["estado"] == "No aprobado"]
-
-    if not reprobados:
-        print("No hay estudiantes reprobados.")
-        return
-
-    print("Listado de estudiantes reprobados:")
-    for estudiante in reprobados:
-        print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
-
 def agregar_estudiante():
     nuevo_estudiante = {
-        "Ti": input("Ingrese el número de identificación del estudiante: "),
+        "Ti": input("Ingrese el número de TIentificación del estudiante: "),
         "nombres": input("Ingrese el nombre del estudiante: "),
         "apellidos": input("Ingrese los apellidos del estudiante: "),
         "direccion": input("Ingrese la dirección del estudiante: "),
@@ -125,6 +77,17 @@ def eliminar_estudiante(Ti_estudiante):
     else:
         print(f"Estudiante con TI {Ti_estudiante} no encontrado.")
 
+def editar_clase(n_clase, nueva_informacion):
+    clases = cargar_datos2()
+    for clase in clases["clases"]:
+        if clase["nb"] == n_clase:
+            clase.update(nueva_informacion)
+            guardar_datos2(clases)
+            print(f"Información de la clase {n_clase} actualizada correctamente.")
+            return
+    else:
+        print(f"Clase {n_clase} no encontrada.")
+
 def agregar_ruta():
     nueva_ruta = input("Ingrese la nueva ruta de estudio: ")
     clases = cargar_datos2()
@@ -155,6 +118,18 @@ def modificar_clase():
 
     guardar_datos2(clases)
     print(f"Clase {clase_seleccionada} modificada exitosamente.")
+
+def listar_estudiantes_inscritos():
+    estudiantes = cargar_datos()
+    inscritos = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Inscrito"]
+
+    if not inscritos:
+        print("No hay estudiantes inscritos.")
+        return
+
+    print("Listado de estudiantes inscritos:")
+    for estudiante in inscritos:
+        print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
 
 def agregar_notas_promedio(Ti_estudiante):
     estudiantes = cargar_datos()
@@ -210,24 +185,41 @@ def agregar_estudiante_a_grupo():
     guardar_grupos(grupos)
     print(f"Estudiantes agregados al grupo {grupo_elegido} correctamente.")
 
-# ---------------Menú de opciones-------------- 🐀 💎
+def menu_principal():
+    print("\n--- Menú Principal ---")
+    print("1. Iniciar Sesión como Coordinador")
+    print("2. Iniciar Sesión como Trainer")
+    print("3. Iniciar Sesión como Camper")
+    print("4. Salir del programa")
+
 def menu_coordinador():
+    print("\n--- Menú Coordinador ---")
+    print("1. Agregar nuevo estudiante")
+    print("2. Editar información de un estudiante")
+    print("3. Eliminar estudiante")
+    print("4. Modificar información de una clase")
+    print("5. Agregar notas y actualizar estado del estudiante")
+    print("6. Agregar nueva ruta de estudio")
+    print("7. Listar estudiantes inscritos")
+    print("8. Listar estudiantes aprobados")
+    print("9. Listar estudiantes reprobados")
+    print("10. Listar todas las clases")
+    print("11. Listar todos los estudiantes")
+    print("12. Agregar estudiantes a un grupo")
+    print("13. Salir del programa")
+
+def menu_trainer():
+    print("\n--- Menú Trainer ---")
+    print("1. Listar todas las clases")
+    print("2. Salir del programa")
+
+def menu_camper():
+    print("\n--- Acceso denegado ---")
+    print("Los campers no tienen acceso a este sistema.")
+
+def iniciar_sesion_coordinador():
     while True:
-        print("\n--- Menú Coordinador ---")
-        print("1. Agregar nuevo estudiante")
-        print("2. Editar información de un estudiante")
-        print("3. Eliminar estudiante")
-        print("4. Modificar información de una clase")
-        print("5. Agregar notas y actualizar estado del estudiante")
-        print("6. Agregar nueva ruta de estudio")
-        print("7. Listar estudiantes inscritos")
-        print("8. Listar estudiantes aprobados")
-        print("9. Listar estudiantes reprobados")
-        print("10. Listar todas las clases")
-        print("11. Listar todos los estudiantes")
-        print("12. Agregar estudiantes a un grupo")
-        print("13. Salir del programa")
-        
+        menu_coordinador()
         opcion = input("\nSeleccione una opción (1-13): ")
 
         if opcion == "1":
@@ -259,13 +251,17 @@ def menu_coordinador():
         elif opcion == "7":
             listar_estudiantes_inscritos()
         elif opcion == "8":
-            listar_estudiantes_aprobados()
+            # Código para listar estudiantes aprobados
+            pass
         elif opcion == "9":
-            listar_estudiantes_reprobados()
+            # Código para listar estudiantes reprobados
+            pass
         elif opcion == "10":
-            listar_clases()
+            # Código para listar todas las clases
+            pass
         elif opcion == "11":
-            listar_estudiantes()
+            # Código para listar todos los estudiantes
+            pass
         elif opcion == "12":
             agregar_estudiante_a_grupo()
         elif opcion == "13":
@@ -274,38 +270,35 @@ def menu_coordinador():
         else:
             print("Opción no válida. Por favor, ingrese una opción válida (1-13).")
 
-def menu_trainer():
+def iniciar_sesion_trainer():
     while True:
-        print("\n--- Menú Trainer ---")
-        print("1. Listar todas las clases")
-        print("2. Salir del programa")
-
+        menu_trainer()
         opcion = input("\nSeleccione una opción (1-2): ")
 
         if opcion == "1":
-            listar_clases()
+            # Código para listar todas las clases
+            pass
         elif opcion == "2":
             print("Saliendo del programa.")
             break
         else:
             print("Opción no válida. Por favor, ingrese una opción válida (1-2).")
 
-def menu_camper():
-    print("\n--- Acceso denegado ---")
-    print("Los campers no tienen acceso a este sistema.")
+def iniciar_sesion_camper():
+    menu_camper()
 
-def iniciar_sesion():
-    print("\n--- Iniciar Sesión ---")
-    usuario = input("Ingrese su rol (Camper, Trainer, Coordinador): ")
+while True:
+    menu_principal()
+    opcion = input("\nSeleccione una opción (1-4): ")
 
-    if usuario.lower() == "camper":
-        menu_camper()
-    elif usuario.lower() == "trainer":
-        menu_trainer()
-    elif usuario.lower() == "coordinador":
-        menu_coordinador()
+    if opcion == "1":
+        iniciar_sesion_coordinador()
+    elif opcion == "2":
+        iniciar_sesion_trainer()
+    elif opcion == "3":
+        iniciar_sesion_camper()
+    elif opcion == "4":
+        print("Saliendo del programa.")
+        break
     else:
-        print("Rol no válido. Por favor, ingrese un rol válido.")
-
-iniciar_sesion()
-
+        print("Opción no válida. Por favor, ingrese una opción válida (1-4).")
