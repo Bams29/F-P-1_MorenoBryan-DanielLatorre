@@ -33,6 +33,54 @@ def guardar_grupos(grupos):
     with open("grupos.json", "w", encoding="utf-8") as file:
         json.dump(grupos, file, indent=2, ensure_ascii=False)
 
+def listar_clases():
+    clases = cargar_datos2()
+    print("--- Clases disponibles ---")
+    for clase in clases["clases"]:
+        print(f"Clase {clase['nb']}: Duración - {clase['duracion']}")
+
+def listar_estudiantes_inscritos():
+    estudiantes = cargar_datos()
+    inscritos = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Inscrito"]
+
+    if not inscritos:
+        print("No hay estudiantes inscritos.")
+        return
+
+    print("Listado de estudiantes inscritos:")
+    for estudiante in inscritos:
+        print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
+
+def listar_estudiantes():
+    estudiantes = cargar_datos()
+    print("--- Listado de estudiantes ---")
+    for estudiante in estudiantes:
+        print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
+
+def listar_estudiantes_aprobados():
+    estudiantes = cargar_datos()
+    aprobados = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Aprobado"]
+
+    if not aprobados:
+        print("No hay estudiantes aprobados.")
+        return
+
+    print("Listado de estudiantes aprobados:")
+    for estudiante in aprobados:
+        print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
+
+def listar_estudiantes_reprobados():
+    estudiantes = cargar_datos()
+    reprobados = [estudiante for estudiante in estudiantes if estudiante["estado"] == "No aprobado"]
+
+    if not reprobados:
+        print("No hay estudiantes reprobados.")
+        return
+
+    print("Listado de estudiantes reprobados:")
+    for estudiante in reprobados:
+        print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
+
 def agregar_estudiante():
     nuevo_estudiante = {
         "Ti": input("Ingrese el número de identificación del estudiante: "),
@@ -77,17 +125,6 @@ def eliminar_estudiante(Ti_estudiante):
     else:
         print(f"Estudiante con TI {Ti_estudiante} no encontrado.")
 
-def editar_clase(n_clase, nueva_informacion):
-    clases = cargar_datos2()
-    for clase in clases["clases"]:
-        if clase["nb"] == n_clase:
-            clase.update(nueva_informacion)
-            guardar_datos2(clases)
-            print(f"Información de la clase {n_clase} actualizada correctamente.")
-            return
-    else:
-        print(f"Clase {n_clase} no encontrada.")
-
 def agregar_ruta():
     nueva_ruta = input("Ingrese la nueva ruta de estudio: ")
     clases = cargar_datos2()
@@ -118,18 +155,6 @@ def modificar_clase():
 
     guardar_datos2(clases)
     print(f"Clase {clase_seleccionada} modificada exitosamente.")
-
-def listar_estudiantes_inscritos():
-    estudiantes = cargar_datos()
-    inscritos = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Inscrito"]
-
-    if not inscritos:
-        print("No hay estudiantes inscritos.")
-        return
-
-    print("Listado de estudiantes inscritos:")
-    for estudiante in inscritos:
-        print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
 
 def agregar_notas_promedio(Ti_estudiante):
     estudiantes = cargar_datos()
@@ -186,52 +211,101 @@ def agregar_estudiante_a_grupo():
     print(f"Estudiantes agregados al grupo {grupo_elegido} correctamente.")
 
 # ---------------Menú de opciones-------------- 🐀 💎
-while True:
-    print("\n--- Menú Principal ---")
-    print("1. Agregar nuevo estudiante")
-    print("2. Editar información de un estudiante")
-    print("3. Eliminar estudiante")
-    print("4. Modificar información de una clase")
-    print("5. Agregar notas y actualizar estado del estudiante")
-    print("6. Agregar nueva ruta de estudio")
-    print("7. Listar estudiantes inscritos")
-    print("8. Agregar estudiantes a un grupo")
-    print("9. Salir del programa")
-    
-    opcion = input("\nSeleccione una opción (1-9): ")
+def menu_coordinador():
+    while True:
+        print("\n--- Menú Coordinador ---")
+        print("1. Agregar nuevo estudiante")
+        print("2. Editar información de un estudiante")
+        print("3. Eliminar estudiante")
+        print("4. Modificar información de una clase")
+        print("5. Agregar notas y actualizar estado del estudiante")
+        print("6. Agregar nueva ruta de estudio")
+        print("7. Listar estudiantes inscritos")
+        print("8. Listar estudiantes aprobados")
+        print("9. Listar estudiantes reprobados")
+        print("10. Listar todas las clases")
+        print("11. Listar todos los estudiantes")
+        print("12. Agregar estudiantes a un grupo")
+        print("13. Salir del programa")
+        
+        opcion = input("\nSeleccione una opción (1-13): ")
 
-    if opcion == "1":
-        agregar_estudiante()
-    elif opcion == "2":
-        Ti_estudiante = input("Ingrese el TI del estudiante que desea editar: ")
-        nueva_informacion = {
-            "nombres": input("Ingrese el nuevo nombre del estudiante: "),
-            "apellidos": input("Ingrese los nuevos apellidos del estudiante: "),
-            "direccion": input("Ingrese la nueva dirección del estudiante: "),
-            "acudiente": input("Ingrese el nuevo nombre del acudiente: "),
-            "telefono_celular": input("Ingrese el nuevo teléfono celular del estudiante: "),
-            "telefono_fijo": input("Ingrese el nuevo teléfono fijo del estudiante: "),
-            "estado": input("Ingrese el nuevo estado del estudiante: "),
-            "riesgo": input("Ingrese el nuevo riesgo del estudiante: ")
-        }
-        editar_estudiante(Ti_estudiante, nueva_informacion)
-    elif opcion == "3":
-        Ti_estudiante = input("Ingrese el TI del estudiante que desea eliminar: ")
-        eliminar_estudiante(Ti_estudiante)
-    elif opcion == "4":
-        modificar_clase()
-    elif opcion == "5":
-        listar_estudiantes_inscritos()
-        Ti_estudiante = input("Ingrese el TI del estudiante al que desea agregar notas: ")
-        agregar_notas_promedio(Ti_estudiante)
-    elif opcion == "6":
-        agregar_ruta()
-    elif opcion == "7":
-        listar_estudiantes_inscritos()
-    elif opcion == "8":
-        agregar_estudiante_a_grupo()
-    elif opcion == "9":
-        print("Saliendo del programa.")
-        break
+        if opcion == "1":
+            agregar_estudiante()
+        elif opcion == "2":
+            Ti_estudiante = input("Ingrese el TI del estudiante que desea editar: ")
+            nueva_informacion = {
+                "nombres": input("Ingrese el nuevo nombre del estudiante: "),
+                "apellidos": input("Ingrese los nuevos apellidos del estudiante: "),
+                "direccion": input("Ingrese la nueva dirección del estudiante: "),
+                "acudiente": input("Ingrese el nuevo nombre del acudiente: "),
+                "telefono_celular": input("Ingrese el nuevo teléfono celular del estudiante: "),
+                "telefono_fijo": input("Ingrese el nuevo teléfono fijo del estudiante: "),
+                "estado": input("Ingrese el nuevo estado del estudiante: "),
+                "riesgo": input("Ingrese el nuevo riesgo del estudiante: ")
+            }
+            editar_estudiante(Ti_estudiante, nueva_informacion)
+        elif opcion == "3":
+            Ti_estudiante = input("Ingrese el TI del estudiante que desea eliminar: ")
+            eliminar_estudiante(Ti_estudiante)
+        elif opcion == "4":
+            modificar_clase()
+        elif opcion == "5":
+            listar_estudiantes_inscritos()
+            Ti_estudiante = input("Ingrese el TI del estudiante al que desea agregar notas: ")
+            agregar_notas_promedio(Ti_estudiante)
+        elif opcion == "6":
+            agregar_ruta()
+        elif opcion == "7":
+            listar_estudiantes_inscritos()
+        elif opcion == "8":
+            listar_estudiantes_aprobados()
+        elif opcion == "9":
+            listar_estudiantes_reprobados()
+        elif opcion == "10":
+            listar_clases()
+        elif opcion == "11":
+            listar_estudiantes()
+        elif opcion == "12":
+            agregar_estudiante_a_grupo()
+        elif opcion == "13":
+            print("Saliendo del programa.")
+            break
+        else:
+            print("Opción no válida. Por favor, ingrese una opción válida (1-13).")
+
+def menu_trainer():
+    while True:
+        print("\n--- Menú Trainer ---")
+        print("1. Listar todas las clases")
+        print("2. Salir del programa")
+
+        opcion = input("\nSeleccione una opción (1-2): ")
+
+        if opcion == "1":
+            listar_clases()
+        elif opcion == "2":
+            print("Saliendo del programa.")
+            break
+        else:
+            print("Opción no válida. Por favor, ingrese una opción válida (1-2).")
+
+def menu_camper():
+    print("\n--- Acceso denegado ---")
+    print("Los campers no tienen acceso a este sistema.")
+
+def iniciar_sesion():
+    print("\n--- Iniciar Sesión ---")
+    usuario = input("Ingrese su rol (Camper, Trainer, Coordinador): ")
+
+    if usuario.lower() == "camper":
+        menu_camper()
+    elif usuario.lower() == "trainer":
+        menu_trainer()
+    elif usuario.lower() == "coordinador":
+        menu_coordinador()
     else:
-        print("Opción no válida. Por favor, ingrese una opción válida (1-9).")
+        print("Rol no válido. Por favor, ingrese un rol válido.")
+
+iniciar_sesion()
+
