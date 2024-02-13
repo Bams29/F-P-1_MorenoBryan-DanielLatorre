@@ -21,6 +21,21 @@ def guardar_notas(notas):
     with open('notas.json', 'w') as archivo:
         json.dump(notas, archivo)
 
+# Función para ingresar las notas y calcular promedio de un módulo
+def ingresar_notas_modulo(nombre_modulo):
+    print(f"Ingrese las notas para el módulo {nombre_modulo}:")
+    nota1 = float(input("Ingrese la primera nota: "))
+    nota2 = float(input("Ingrese la segunda nota: "))
+    nota3 = float(input("Ingrese la tercera nota: "))
+
+    # Calcular promedio
+    promedio = (nota1 + nota2 + nota3) / 3
+
+    # Solicitar ruta de estudio
+    ruta_estudio = input("Ingrese la ruta de estudio: ")
+
+    return {"nombre_modulo": nombre_modulo, "nota1": nota1, "nota2": nota2, "nota3": nota3, "promedio": promedio, "ruta_estudio": ruta_estudio}
+
 # Función principal
 def main():
     # Cargar datos de estudiantes
@@ -33,34 +48,29 @@ def main():
     estudiante = buscar_estudiante(estudiantes, nombre_estudiante)
 
     if estudiante:
-        # Solicitar las notas
-        nota1 = float(input("Ingrese la primera nota: "))
-        nota2 = float(input("Ingrese la segunda nota: "))
-        nota3 = float(input("Ingrese la tercera nota: "))
+        # Lista de módulos
+        modulos = ["Módulo 1", "Módulo 2", "Módulo 3", "Módulo 4", "Módulo 5"]
 
-        # Solicitar la ruta de estudio
-        ruta_estudio = input("Ingrese la ruta de estudio: ")
+        # Mostrar los módulos disponibles
+        print("Módulos disponibles:")
+        for i, modulo in enumerate(modulos, start=1):
+            print(f"{i}. {modulo}")
 
-        # Calcular porcentajes
-        nota1 *= 0.1
-        nota2 *= 0.3
-        nota3 *= 0.6
+        # Solicitar al usuario que elija un módulo
+        opcion_modulo = int(input("Seleccione el módulo (1-5): "))
+        if opcion_modulo not in range(1, 6):
+            print("Opción inválida. Saliendo del programa.")
+            return
 
-        # Calcular promedio
-        promedio = (nota1 + nota2 + nota3) / 3
+        nombre_modulo_elegido = modulos[opcion_modulo - 1]
+
+        # Ingresar las notas para el módulo elegido
+        notas_modulo = ingresar_notas_modulo(nombre_modulo_elegido)
 
         # Guardar las notas en un archivo JSON
-        notas = {
-            "nombre": nombre_estudiante,
-            "nota1": nota1,
-            "nota2": nota2,
-            "nota3": nota3,
-            "promedio": promedio,
-            "ruta_estudio": ruta_estudio
-        }
-        guardar_notas(notas)
+        guardar_notas(notas_modulo)
 
-        print("Notas guardadas exitosamente.")
+        print("Notas del módulo guardadas exitosamente.")
     else:
         print("Estudiante no encontrado.")
 
