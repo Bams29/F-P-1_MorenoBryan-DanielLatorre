@@ -131,6 +131,18 @@ def listar_estudiantes_inscritos():
     for estudiante in inscritos:
         print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
 
+def listar_estudiantes_aprobados():
+    estudiantes = cargar_datos()
+    aprobados = [estudiante for estudiante in estudiantes if estudiante["estado"] == "Aprobado"]
+
+    if not aprobados:
+        print("No hay estudiantes Aprobados.")
+        return
+
+    print("Listado de estudiantes Aprobados:")
+    for estudiante in aprobados:
+        print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
+
 def agregar_notas_promedio(Ti_estudiante):
     estudiantes = cargar_datos()
 
