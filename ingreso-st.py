@@ -43,7 +43,12 @@ def agregar_estudiante():
         "telefono_celular": input("Ingrese el teléfono celular del estudiante: "),
         "telefono_fijo": input("Ingrese el teléfono fijo del estudiante: "),
         "estado": input("Ingrese el estado del estudiante: "),
-        "riesgo": input("Ingrese el riesgo del estudiante: ")
+        "riesgo": input("Ingrese el riesgo del estudiante: "),
+        "mo1":"",
+        "mo2":"",
+        "mo3":"",
+        "mo4":"",
+        "mo5":""
     }
     estudiantes = cargar_datos()
     estudiantes.append(nuevo_estudiante)
