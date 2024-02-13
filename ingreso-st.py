@@ -143,6 +143,18 @@ def listar_estudiantes_aprobados():
     for estudiante in aprobados:
         print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
 
+def listar_estudiantes_reprobados():
+    estudiantes = cargar_datos()
+    reprobados = [estudiante for estudiante in estudiantes if estudiante["estado"] == "No Aprobado"]
+
+    if not reprobados:
+        print("No hay estudiantes reprobados.")
+        return
+
+    print("Listado de estudiantes reprobados:")
+    for estudiante in reprobados:
+        print(f"TI: {estudiante['Ti']}, Nombre: {estudiante['nombres']}")
+
 def agregar_notas_promedio(Ti_estudiante):
     estudiantes = cargar_datos()
 
@@ -263,11 +275,9 @@ def iniciar_sesion_coordinador():
         elif opcion == "7":
             listar_estudiantes_inscritos()
         elif opcion == "8":
-            # Código para listar estudiantes aprobados
-            pass
+            listar_estudiantes_aprobados()
         elif opcion == "9":
-            # Código para listar estudiantes reprobados
-            pass
+            listar_estudiantes_reprobados()
         elif opcion == "10":
             # Código para listar todas las clases
             pass
