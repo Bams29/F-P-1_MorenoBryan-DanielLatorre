@@ -363,7 +363,8 @@ def menu_coordinador():
 def menu_trainer():
     print("\n--- Menú Trainer ---")
     print("1. Listar todas las clases")
-    print("2. Salir del programa")
+    print("2. Ingresar notas estudiantes inscritos")
+    print("3. Salir del programa")
 
 def menu_camper():
     print("\n--- Acceso denegado ---")
@@ -438,6 +439,10 @@ def iniciar_sesion_trainer():
         if opcion == "1":
             listar_clases()
         elif opcion == "2":
+            listar_estudiantes_inscritos()
+            Ti_estudiante = input("Ingrese el TI del estudiante al que desea agregar notas: ")
+            agregar_notas_promedio(Ti_estudiante)
+        elif opcion == "3":
             print("Saliendo del programa.")
             break
         else:
