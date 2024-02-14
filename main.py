@@ -383,7 +383,7 @@ def reportes():
 def iniciar_sesion_coordinador():
     while True:
         menu_coordinador()
-        opcion = input("\nSeleccione una opción (1-13): ")
+        opcion = input("\nSeleccione una opción (1-14): ")
 
         if opcion == "1":
             agregar_estudiante()
@@ -434,7 +434,7 @@ def iniciar_sesion_coordinador():
 def iniciar_sesion_trainer():
     while True:
         menu_trainer()
-        opcion = input("\nSeleccione una opción (1-2): ")
+        opcion = input("\nSeleccione una opción (1-3): ")
 
         if opcion == "1":
             listar_clases()
@@ -446,7 +446,7 @@ def iniciar_sesion_trainer():
             print("Saliendo del programa.")
             break
         else:
-            print("Opción no válida. Por favor, ingrese una opción válida (1-2).")
+            print("Opción no válida. Por favor, ingrese una opción válida (1-3).")
 
 def iniciar_sesion_camper():
     menu_camper()
@@ -482,7 +482,7 @@ def iniciar_reportes():
 
 while True:
     menu_principal()
-    opcion = input("\nSeleccione una opción (1-4): ")
+    opcion = input("\nSeleccione una opción (1-5): ")
 
     if opcion == "1":
         iniciar_sesion_coordinador()
@@ -496,4 +496,4 @@ while True:
         print("Saliendo del programa.")
         break
     else:
-        print("Opción no válida. Por favor, ingrese una opción válida (1-4).")
+        print("Opción no válida. Por favor, ingrese una opción válida (1-5).")
