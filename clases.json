@@ -14,8 +14,12 @@
     {
       "nb": 2,
       "duracion": "10:30-01:30",
-      "ruta": "sin especificar",
-      "profesor": "sin especificar",
+      "ruta": [
+        "Java",
+        "NetCore",
+        "Java"
+      ],
+      "profesor": "Miguel",
       "aula/s": "sin especificar"
     },
     {
