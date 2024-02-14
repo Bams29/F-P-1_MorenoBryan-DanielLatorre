@@ -1,9 +1,9 @@
 import json
 
 # Función para cargar datos de estudiantes desde un archivo JSON
-def cargar_estudiantes(nombre_archivo):
+def cargar_estudiantes(estudiantes):
     try:
-        with open(nombre_archivo, 'r') as archivo:
+        with open("estudiantes.json", 'r') as archivo:
             datos = json.load(archivo)
         return datos
     except FileNotFoundError:
@@ -24,17 +24,26 @@ def guardar_notas(notas):
     except FileNotFoundError:
         datos = []
 
-    # Verificar si ya existen notas para este módulo
+    # Verificar si el estudiante ya tiene notas registradas
     encontrado = False
-    if isinstance(datos, list):
-        for item in datos:
-            if isinstance(item, dict) and item.get('nombre_modulo') == notas['nombre_modulo']:
-                item['notas'].append(notas)
+    for estudiante in datos:
+        if estudiante.get('nombre') == notas['nombre_estudiante']:
+            # Verificar si el módulo ya tiene notas registradas
+            for modulo in estudiante['modulos']:
+                if modulo['nombre_modulo'] == notas['nombre_modulo']:
+                    modulo['notas'].append(notas)
+                    encontrado = True
+                    break
+            else:
+                estudiante['modulos'].append({"nombre_modulo": notas['nombre_modulo'], "notas": [notas]})
                 encontrado = True
-                break
+            break
 
     if not encontrado:
-        datos.append({"nombre_modulo": notas['nombre_modulo'], "notas": [notas]})
+        datos.append({
+            "nombre": notas['nombre_estudiante'],
+            "modulos": [{"nombre_modulo": notas['nombre_modulo'], "notas": [notas]}]
+        })
 
     with open('notas.json', 'w') as archivo:
         json.dump(datos, archivo)
@@ -85,9 +94,10 @@ def main():
 
         # Ingresar las notas para el módulo elegido
         notas_modulo = ingresar_notas_modulo(nombre_modulo_elegido)
+        notas_modulo['nombre_estudiante'] = nombre_estudiante
+        notas_modulo['nombre_modulo'] = nombre_modulo_elegido
 
         # Guardar las notas en un archivo JSON
-        notas_modulo['nombre_modulo'] = nombre_modulo_elegido
         guardar_notas(notas_modulo)
 
         print("Notas del módulo guardadas exitosamente.")
@@ -96,3 +106,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
