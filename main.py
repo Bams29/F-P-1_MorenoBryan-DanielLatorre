@@ -335,6 +335,51 @@ def listar_profesores():
     for i, profesor in enumerate(clases["profesores"], start=1):
             print(f"{i}. {profesor['nombre']} - Rutas: {', '.join(profesor['rutas'])}")
 
+import json
+
+def listar_estudiantes_bajo_rendimiento():
+    try:
+        with open("notas.json", "r", encoding="utf-8") as file:
+            datos_notas = json.load(file)
+
+        print("\nEstudiantes con bajo rendimiento:")
+        for estudiante in datos_notas:
+            for modulo in estudiante.get("modulos", []):
+                for nota in modulo.get("notas", []):
+                    if nota.get("rendimiento") == "bajo":
+                        print(f"Estudiante: {estudiante['nombre']}, Módulo: {modulo['nombre_modulo']}, Rendimiento: Bajo")
+
+    except FileNotFoundError:
+        print("Archivo 'notas.json' no encontrado.")
+    except Exception as e:
+        print(f"Error al cargar y procesar datos: {e}")
+
+def listar_estudiantes_misma_ruta():
+    try:
+        with open("clases.json", "r", encoding="utf-8") as clases_file:
+            datos_clases = json.load(clases_file)
+
+        with open("notas.json", "r", encoding="utf-8") as notas_file:
+            datos_notas = json.load(notas_file)
+
+        profesores_rutas = {profesor["nombre"]: set(profesor["rutas"]) if isinstance(profesor["rutas"], list) else {profesor["rutas"]} for profesor in datos_clases["profesores"]}
+
+        print("\nEstudiantes con la misma ruta que los profesores:")
+        for estudiante in datos_notas:
+            for modulo in estudiante.get("modulos", []):
+                for nota in modulo.get("notas", []):
+                    ruta_estudio = nota.get("ruta_estudio", "").lower()
+                    nombre_modulo = nota.get("nombre_modulo", "")
+                    if nombre_modulo in profesores_rutas and ruta_estudio in profesores_rutas[nombre_modulo]:
+                        print(f"Estudiante: {estudiante['nombre']}, Ruta de Estudio: {ruta_estudio}, Módulo: {nombre_modulo}")
+
+    except FileNotFoundError:
+        print("Archivos 'clases.json' o 'notas.json' no encontrados.")
+    except Exception as e:
+        print(f"Error al cargar y procesar datos: {e}")
+
+
+
 def menu_principal():
     print("\n--- Menú Principal ---")
     print("1. Iniciar Sesión como Coordinador")
@@ -463,11 +508,9 @@ def iniciar_reportes():
         elif opcion == "3":
             listar_profesores()
         elif opcion == "4":
-            #Campers con bajo rendimiento
-            pass
+            listar_estudiantes_bajo_rendimiento()
         elif opcion == "5":
-            #Campers y trainers misma ruta
-            pass
+            listar_estudiantes_misma_ruta()
         elif opcion == "6":
             listar_estudiantes_reprobados()
             print("")
