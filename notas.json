@@ -180,5 +180,35 @@
         ]
       }
     ]
+  },
+  {
+    "nombre": "pepe",
+    "modulos": [
+      {
+        "nombre_modulo": "Modulo 1",
+        "notas": [
+          {
+            "nota1": 33.0,
+            "nota2": 44.0,
+            "nota3": 55.0,
+            "promedio": 44.0,
+            "resultado": "reprobado",
+            "ruta_estudio": "java",
+            "nombre_estudiante": "pepe",
+            "nombre_modulo": "Modulo 1"
+          },
+          {
+            "nota1": 33.0,
+            "nota2": 44.0,
+            "nota3": 55.0,
+            "promedio": 44.0,
+            "resultado": "reprobado",
+            "ruta_estudio": "java",
+            "nombre_estudiante": "pepe",
+            "nombre_modulo": "Modulo 1"
+          }
+        ]
+      }
+    ]
   }
 ]
