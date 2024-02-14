@@ -464,8 +464,9 @@ def iniciar_reportes():
             #Campers y trainers misma ruta
             pass
         elif opcion == "6":
-            #Campers aprobados y reprobados
-            pass
+            listar_estudiantes_reprobados()
+            print("")
+            listar_estudiantes_aprobados()
         elif opcion == "7":
             print ("Saliendo del programa.")
             break
