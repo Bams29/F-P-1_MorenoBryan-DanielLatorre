@@ -35,7 +35,7 @@ def guardar_grupos(grupos):
 
 def agregar_estudiante():
     nuevo_estudiante = {
-        "Ti": input("Ingrese el número de TIentificación del estudiante: "),
+        "Ti": input("Ingrese el número de Identificación del estudiante: "),
         "nombres": input("Ingrese el nombre del estudiante: "),
         "apellidos": input("Ingrese los apellidos del estudiante: "),
         "direccion": input("Ingrese la dirección del estudiante: "),
@@ -269,6 +269,66 @@ def matricular_estudiantes():
 
     guardar_grupos(grupos)
 
+def asignar_profesor_a_clase():
+    clases = cargar_datos2()
+
+    print("Clases disponibles:")
+    for clase in clases["clases"]:
+        print(f"Clase {clase['nb']}: Duración - {clase['duracion']}")
+
+    while True:
+        opcion_clase = input("Ingrese el número de la clase a la que desea asignar un profesor: ")
+
+        try:
+            opcion_clase = int(opcion_clase)
+            if 1 <= opcion_clase <= len(clases["clases"]):
+                clase_elegida = clases["clases"][opcion_clase - 1]
+                break
+            else:
+                print("Opción fuera de rango.")
+        except ValueError:
+            print("Por favor, ingrese un número válido.")
+
+    print("\nProfesores disponibles:")
+    for i, profesor in enumerate(clases["profesores"], start=1):
+        print(f"{i}. {profesor['nombre']} - Rutas: {', '.join(profesor['rutas'])}")
+
+    while True:
+        opcion_profesor = input("Ingrese el número del profesor que desea asignar a la clase: ")
+
+        try:
+            opcion_profesor = int(opcion_profesor)
+            if 1 <= opcion_profesor <= len(clases["profesores"]):
+                profesor_elegido = clases["profesores"][opcion_profesor - 1]
+                break
+            else:
+                print("Opción fuera de rango.")
+        except ValueError:
+            print("Por favor, ingrese un número válido.")
+
+    clase_elegida["profesor"] = profesor_elegido["nombre"]
+    clase_elegida["ruta"] = profesor_elegido["rutas"]
+
+    print("\nAulas disponibles:")
+    for i, aula in enumerate(clases["aulas"], start=1):
+        print(f"{i}. {aula}")
+
+    while True:
+        opcion_aula = input("Ingrese el número del aula para la clase: ")
+
+        try:
+            opcion_aula = int(opcion_aula)
+            if 1 <= opcion_aula <= len(clases["aulas"]):
+                clase_elegida["aula/s"] = clases["aulas"][opcion_aula - 1]
+                break
+            else:
+                print("Opción fuera de rango.")
+        except ValueError:
+            print("Por favor, ingrese un número válido.")
+
+    guardar_datos2(clases)
+    print(f"Profesor {profesor_elegido['nombre']} asignado a la clase {clase_elegida['nb']} en el aula {clase_elegida['aula/s']} correctamente.")
+
 
 
 def menu_principal():
@@ -292,7 +352,8 @@ def menu_coordinador():
     print("10. Listar todas las clases")
     print("11. Agregar estudiantes a un grupo")
     print("12. Matricular estudiante")
-    print("13. Salir del programa")
+    print("13. Asignar trainer")
+    print("14. Salir del programa")
 
 def menu_trainer():
     print("\n--- Menú Trainer ---")
@@ -347,6 +408,8 @@ def iniciar_sesion_coordinador():
         elif opcion == "12":
             matricular_estudiantes() 
         elif opcion == "13":
+            asignar_profesor_a_clase()
+        elif opcion == "14":
             print("Saliendo del programa.")
             break
         else:
