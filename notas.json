@@ -1,1 +1,109 @@
-[{"nombre": "Ana", "modulos": [{"nombre_modulo": "Modulo 3", "notas": [{"nota1": 55.0, "nota2": 66.0, "nota3": 77.0, "promedio": 66.0, "ruta_estudio": "node", "nombre_estudiante": "Ana", "nombre_modulo": "Modulo 3"}]}, {"nombre_modulo": "Modulo 1", "notas": [{"nota1": 77.0, "nota2": 66.0, "nota3": 55.0, "promedio": 66.0, "ruta_estudio": "java", "nombre_estudiante": "Ana", "nombre_modulo": "Modulo 1"}, {"nota1": 66.0, "nota2": 77.0, "nota3": 88.0, "promedio": 77.0, "estado": "Aprobado", "ruta_estudio": "java", "nombre_estudiante": "Ana", "nombre_modulo": "Modulo 1"}]}, {"nombre_modulo": "Modulo 4", "notas": [{"nota1": 33.0, "nota2": 44.0, "nota3": 55.0, "promedio": 44.0, "resultado": "Reprobado", "ruta_estudio": "node", "nombre_estudiante": "Ana", "nombre_modulo": "Modulo 4"}]}, {"nombre_modulo": "Modulo 2", "notas": [{"nota1": 22.0, "nota2": 33.0, "nota3": 44.0, "promedio": 33.0, "resultado": "", "ruta_estudio": "j", "nombre_estudiante": "Ana", "nombre_modulo": "Modulo 2"}, {"nota1": 33.0, "nota2": 44.0, "nota3": 55.0, "promedio": 44.0, "resultado": "reprobado", "ruta_estudio": "gg", "nombre_estudiante": "Ana", "nombre_modulo": "Modulo 2"}, {"nota1": 22.0, "nota2": 3.0, "nota3": 33.0, "promedio": 19.333333333333332, "resultado": "reprobado", "ruta_estudio": "java", "nombre_estudiante": "Ana", "nombre_modulo": "Modulo 2"}]}]}, {"nombre": "Juan", "modulos": [{"nombre_modulo": "Modulo 2", "notas": [{"nota1": 33.0, "nota2": 44.0, "nota3": 55.0, "promedio": 44.0, "ruta_estudio": "html", "nombre_estudiante": "Juan", "nombre_modulo": "Modulo 2"}]}, {"nombre_modulo": "Modulo 1", "notas": [{"nota1": 55.0, "nota2": 66.0, "nota3": 77.0, "promedio": 66.0, "resultado": "Aprobado", "ruta_estudio": "java", "nombre_estudiante": "Juan", "nombre_modulo": "Modulo 1"}]}]}]
+[
+  {
+    "nombre": "Ana",
+    "modulos": [
+      {
+        "nombre_modulo": "Modulo 3",
+        "notas": [
+          {
+            "nota1": 55.0,
+            "nota2": 66.0,
+            "nota3": 77.0,
+            "promedio": 66.0,
+            "ruta_estudio": "node",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 3"
+          }
+        ]
+      },
+      {
+        "nombre_modulo": "Modulo 1",
+        "notas": [
+          {
+            "nota1": 77.0,
+            "nota2": 66.0,
+            "nota3": 55.0,
+            "promedio": 66.0,
+            "ruta_estudio": "java",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 1"
+          },
+          {
+            "nota1": 66.0,
+            "nota2": 77.0,
+            "nota3": 88.0,
+            "promedio": 77.0,
+            "estado": "Aprobado",
+            "ruta_estudio": "java",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 1"
+          }
+        ]
+      },
+      {
+        "nombre_modulo": "Modulo 4",
+        "notas": [
+          {
+            "nota1": 33.0,
+            "nota2": 44.0,
+            "nota3": 55.0,
+            "promedio": 44.0,
+            "resultado": "Reprobado",
+            "ruta_estudio": "node",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 4"
+          }
+        ]
+      },
+      {
+        "nombre_modulo": "Modulo 2",
+        "notas": [
+          {
+            "nota1": 22.0,
+            "nota2": 33.0,
+            "nota3": 44.0,
+            "promedio": 33.0,
+            "resultado": "",
+            "ruta_estudio": "j",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Juan",
+    "modulos": [
+      {
+        "nombre_modulo": "Modulo 2",
+        "notas": [
+          {
+            "nota1": 33.0,
+            "nota2": 44.0,
+            "nota3": 55.0,
+            "promedio": 44.0,
+            "ruta_estudio": "html",
+            "nombre_estudiante": "Juan",
+            "nombre_modulo": "Modulo 2"
+          }
+        ]
+      },
+      {
+        "nombre_modulo": "Modulo 1",
+        "notas": [
+          {
+            "nota1": 55.0,
+            "nota2": 66.0,
+            "nota3": 77.0,
+            "promedio": 66.0,
+            "resultado": "Aprobado",
+            "ruta_estudio": "java",
+            "nombre_estudiante": "Juan",
+            "nombre_modulo": "Modulo 1"
+          }
+        ]
+      }
+    ]
+  }
+]
