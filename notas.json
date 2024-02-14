@@ -83,20 +83,26 @@
             ]
           },
           {
-            "nombre_modulo": "Modulo 5",
-            "notas": [
-              {
-                "nota1": 0,
-                "nota2": 0,
-                "nota3": 0,
-                "promedio": 0,
-                "resultado": "",
-                "ruta_estudio": "",
-                "estado": "",
-                "nombre_estudiante": "",
-                "nombre_modulo": "Modulo 5"
-              }
-            ]
+            "nota1": 22.0,
+            "nota2": 33.0,
+            "nota3": 22.0,
+            "promedio": 25.666666666666668,
+            "resultado": "reprobado",
+            "rendimiento": "bajo",
+            "ruta_estudio": "java",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 2"
+          },
+          {
+            "nota1": 22.0,
+            "nota2": 33.0,
+            "nota3": 22.0,
+            "promedio": 25.666666666666668,
+            "resultado": "reprobado",
+            "rendimiento": "bajo",
+            "ruta_estudio": "java",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 2"
           }
         ]
       },
