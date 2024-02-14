@@ -413,7 +413,7 @@ def iniciar_sesion_coordinador():
             print("Saliendo del programa.")
             break
         else:
-            print("Opción no válida. Por favor, ingrese una opción válida (1-13).")
+            print("Opción no válida. Por favor, ingrese una opción válida (1-14).")
 
 def iniciar_sesion_trainer():
     while True:
