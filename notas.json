@@ -1,2 +1,94 @@
-[{"nombre": "Ana", "modulos": [{"nombre_modulo": "M\u00f3dulo 3", "notas": [{"nota1": 55.0, "nota2": 66.0, "nota3": 77.0, "promedio": 66.0, "ruta_estudio": "node", "nombre_estudiante": "Ana", "nombre_modulo": "M\u00f3dulo 3"}]}, {"nombre_modulo": "M\u00f3dulo 1", "notas": [{"nota1": 77.0, "nota2": 66.0, "nota3": 55.0, "promedio": 66.0, "ruta_estudio": "java", "nombre_estudiante": "Ana", "nombre_modulo": "M\u00f3dulo 1"}, {"nota1": 66.0, "nota2": 77.0, "nota3": 88.0, "promedio": 77.0, "estado": "Aprobado", "ruta_estudio": "java", "nombre_estudiante": "Ana", "nombre_modulo": "M\u00f3dulo 1"}]}]},
-{"nombre": "Juan", "modulos": [{"nombre_modulo": "M\u00f3dulo 2", "notas": [{"nota1": 33.0, "nota2": 44.0, "nota3": 55.0, "promedio": 44.0, "ruta_estudio": "html", "nombre_estudiante": "Juan", "nombre_modulo": "M\u00f3dulo 2"}]}]}]
+[
+    {
+        "nombre": "Ana",
+        "modulos": [
+            {
+                "nombre_modulo": "M\u00f3dulo 3",
+                "notas": [
+                    {
+                        "nota1": 55.0,
+                        "nota2": 66.0,
+                        "nota3": 77.0,
+                        "promedio": 66.0,
+                        "ruta_estudio": "node",
+                        "nombre_estudiante": "Ana",
+                        "nombre_modulo": "M\u00f3dulo 3"
+                    }
+                ]
+            },
+            {
+                "nombre_modulo": "M\u00f3dulo 1",
+                "notas": [
+                    {
+                        "nota1": 77.0,
+                        "nota2": 66.0,
+                        "nota3": 55.0,
+                        "promedio": 66.0,
+                        "ruta_estudio": "java",
+                        "nombre_estudiante": "Ana",
+                        "nombre_modulo": "M\u00f3dulo 1"
+                    },
+                    {
+                        "nota1": 66.0,
+                        "nota2": 77.0,
+                        "nota3": 88.0,
+                        "promedio": 77.0,
+                        "estado": "Aprobado",
+                        "ruta_estudio": "java",
+                        "nombre_estudiante": "Ana",
+                        "nombre_modulo": "M\u00f3dulo 1"
+                    }
+                ]
+            },
+            {
+                "nombre_modulo": "M\u00f3dulo 4",
+                "notas": [
+                    {
+                        "nota1": 33.0,
+                        "nota2": 44.0,
+                        "nota3": 55.0,
+                        "promedio": 44.0,
+                        "resultado": "Reprobado",
+                        "ruta_estudio": "node",
+                        "nombre_estudiante": "Ana",
+                        "nombre_modulo": "M\u00f3dulo 4"
+                    }
+                ]
+            },
+            {
+                "nombre_modulo": "M\u00f3dulo 2",
+                "notas": [
+                    {
+                        "nota1": 44.0,
+                        "nota2": 55.0,
+                        "nota3": 66.0,
+                        "promedio": 55.0,
+                        "resultado": "Reprobado",
+                        "ruta_estudio": "json",
+                        "nombre_estudiante": "Ana",
+                        "nombre_modulo": "M\u00f3dulo 2"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "Juan",
+        "modulos": [
+            {
+                "nombre_modulo": "M\u00f3dulo 2",
+                "notas": [
+                    {
+                        "nota1": 33.0,
+                        "nota2": 44.0,
+                        "nota3": 55.0,
+                        "promedio": 44.0,
+                        "ruta_estudio": "html",
+                        "nombre_estudiante": "Juan",
+                        "nombre_modulo": "M\u00f3dulo 2"
+                    }
+                ]
+            }
+        ]
+    }
+]

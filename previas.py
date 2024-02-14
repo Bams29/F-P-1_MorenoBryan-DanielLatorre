@@ -50,7 +50,6 @@ def guardar_notas(notas):
 
 
 # Función para ingresar las notas y calcular promedio de un módulo
-# Función para ingresar las notas y calcular promedio de un módulo
 def ingresar_notas_modulo(nombre_modulo):
     print(f"Ingrese las notas para el módulo {nombre_modulo}:")
     nota1 = float(input("Ingrese la primera nota: "))
@@ -60,16 +59,10 @@ def ingresar_notas_modulo(nombre_modulo):
     # Calcular promedio
     promedio = (nota1 + nota2 + nota3) / 3
 
-    # Marcar si el estudiante aprobó o reprobó
-    if promedio >= 60:
-        estado = "Aprobado"
-    else:
-        estado = "Reprobado"
-
     # Solicitar ruta de estudio
     ruta_estudio = input("Ingrese la ruta de estudio: ")
 
-    return {"nota1": nota1, "nota2": nota2, "nota3": nota3, "promedio": promedio, "estado": estado, "ruta_estudio": ruta_estudio}
+    return {"nota1": nota1, "nota2": nota2, "nota3": nota3, "promedio": promedio, "ruta_estudio": ruta_estudio}
 
 # Función principal
 def main():
