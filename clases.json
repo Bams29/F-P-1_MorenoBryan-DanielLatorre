@@ -4,37 +4,37 @@
       "nb": 1,
       "duracion": "06:00-10:00",
       "ruta": [
-        "Java",
-        "NetCore",
-        "NodeJS"
+        "Java"
       ],
       "profesor": "Pedro",
-      "aula/s": "Apolo"
+      "aula/s": "Sputnik"
     },
     {
       "nb": 2,
       "duracion": "10:30-01:30",
       "ruta": [
-        "Java",
-        "NetCore",
-        "Java"
+        "NodeJS"
       ],
       "profesor": "Miguel",
-      "aula/s": "sin especificar"
+      "aula/s": "Apolo"
     },
     {
       "nb": 3,
       "duracion": "02:00-06:00",
-      "ruta": "sin especificar",
-      "profesor": "sin especificar",
-      "aula/s": "sin especificar"
+      "ruta": [
+        "NetCore"
+      ],
+      "profesor": "Manuel",
+      "aula/s": "Artemis"
     },
     {
       "nb": 4,
       "duracion": "06:30-9:30",
-      "ruta": "sin especificar",
+      "ruta": [
+        "html"
+      ],
       "profesor": "sin especificar",
-      "aula/s": "sin especificar"
+      "aula/s": "Sputnik"
     }
   ],
   "profesores": [
@@ -44,7 +44,8 @@
         "Java",
         "NetCore",
         "NodeJS"
-      ]
+      ],
+      "ruta_asignada": "Java"
     },
     {
       "nombre": "Miguel",
@@ -52,7 +53,8 @@
         "Java",
         "NetCore",
         "NodeJS"
-      ]
+      ],
+      "ruta_asignada": "NodeJS"
     },
     {
       "nombre": "Manuel",
@@ -60,7 +62,8 @@
         "Java",
         "NetCore",
         "NodeJS"
-      ]
+      ],
+      "ruta_asignada": "NetCore"
     },
     {
       "nombre": "Juan",
@@ -68,7 +71,8 @@
         "Java",
         "NetCore",
         "NodeJS"
-      ]
+      ],
+      "ruta_asignada": "html"
     }
   ],
   "aulas": [

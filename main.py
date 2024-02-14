@@ -306,8 +306,26 @@ def asignar_profesor_a_clase():
         except ValueError:
             print("Por favor, ingrese un número válido.")
 
-    clase_elegida["profesor"] = profesor_elegido["nombre"]
-    clase_elegida["ruta"] = profesor_elegido["rutas"]
+    print("\nRutas disponibles:")
+    for i, ruta in enumerate(clases["rutas"], start=1):
+        print(f"{i}. {ruta}")
+
+    while True:
+        opcion_ruta = input("Ingrese el número de la ruta que desea asignar al profesor para esta clase: ")
+
+        try:
+            opcion_ruta = int(opcion_ruta)
+            if 1 <= opcion_ruta <= len(clases["rutas"]):
+                ruta_elegida = clases["rutas"][opcion_ruta - 1]
+                break
+            else:
+                print("Opción fuera de rango.")
+        except ValueError:
+            print("Por favor, ingrese un número válido.")
+
+    profesor_elegido["ruta_asignada"] = ruta_elegida
+
+    clase_elegida["ruta"] = [ruta_elegida]
 
     print("\nAulas disponibles:")
     for i, aula in enumerate(clases["aulas"], start=1):
@@ -327,7 +345,9 @@ def asignar_profesor_a_clase():
             print("Por favor, ingrese un número válido.")
 
     guardar_datos2(clases)
-    print(f"Profesor {profesor_elegido['nombre']} asignado a la clase {clase_elegida['nb']} en el aula {clase_elegida['aula/s']} correctamente.")
+    print(f"Profesor {profesor_elegido['nombre']} asignado a la clase {clase_elegida['nb']} en el aula {clase_elegida['aula/s']} con la ruta {ruta_elegida} correctamente.")
+
+
 
 def listar_profesores():
     clases = cargar_datos2()
