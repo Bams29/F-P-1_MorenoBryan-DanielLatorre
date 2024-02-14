@@ -329,14 +329,19 @@ def asignar_profesor_a_clase():
     guardar_datos2(clases)
     print(f"Profesor {profesor_elegido['nombre']} asignado a la clase {clase_elegida['nb']} en el aula {clase_elegida['aula/s']} correctamente.")
 
-
+def listar_profesores():
+    clases = cargar_datos2()
+    print("\nProfesores disponibles:")
+    for i, profesor in enumerate(clases["profesores"], start=1):
+            print(f"{i}. {profesor['nombre']} - Rutas: {', '.join(profesor['rutas'])}")
 
 def menu_principal():
     print("\n--- Menú Principal ---")
     print("1. Iniciar Sesión como Coordinador")
     print("2. Iniciar Sesión como Trainer")
     print("3. Iniciar Sesión como Camper")
-    print("4. Salir del programa")
+    print("4. Reportes")
+    print("5. Salir del programa")
 
 def menu_coordinador():
     print("\n--- Menú Coordinador ---")
@@ -363,6 +368,16 @@ def menu_trainer():
 def menu_camper():
     print("\n--- Acceso denegado ---")
     print("Los campers no tienen acceso a este sistema.")
+
+def reportes():
+    print("\n--- Reportes ---")
+    print("1. Listado de estudiantes inscritos.")
+    print("2. Campers aprobaron examen inicial.")
+    print("3. Trainers trabajando actualmente.")
+    print("4. Campers con bajo rendimiento.")
+    print("5. Campers y Trainers que se encuentran en la misma ruta.")
+    print("6. Mostrar Campers que aprobaron y reprobaron.")
+    print("7. Salir del programa.")
 
 def iniciar_sesion_coordinador():
     while True:
@@ -431,6 +446,34 @@ def iniciar_sesion_trainer():
 def iniciar_sesion_camper():
     menu_camper()
 
+def iniciar_reportes():
+    while True:
+        reportes()
+        opcion = input("\nSeleccione una opción (1-7): ")
+
+        if opcion == "1":
+            listar_estudiantes_inscritos()
+        elif opcion == "2":
+            listar_estudiantes_aprobados()
+        elif opcion == "3":
+            listar_profesores()
+        elif opcion == "4":
+            #Campers con bajo rendimiento
+            pass
+        elif opcion == "5":
+            #Campers y trainers misma ruta
+            pass
+        elif opcion == "6":
+            #Campers aprobados y reprobados
+            pass
+        elif opcion == "7":
+            print ("Saliendo del programa.")
+            break
+        else:
+            print("Opcion no valida. Por favor, ingrese una opcion valida (1-7).")
+
+
+
 while True:
     menu_principal()
     opcion = input("\nSeleccione una opción (1-4): ")
@@ -442,6 +485,8 @@ while True:
     elif opcion == "3":
         iniciar_sesion_camper()
     elif opcion == "4":
+        iniciar_reportes()
+    elif opcion == "5":
         print("Saliendo del programa.")
         break
     else:

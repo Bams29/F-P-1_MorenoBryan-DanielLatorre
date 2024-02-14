@@ -59,10 +59,12 @@ def ingresar_notas_modulo(nombre_modulo):
     # Calcular promedio
     promedio = (nota1 + nota2 + nota3) / 3
 
+    resultado = "aprovado" if promedio > 60 else "reprobado"
+
     # Solicitar ruta de estudio
     ruta_estudio = input("Ingrese la ruta de estudio: ")
 
-    return {"nota1": nota1, "nota2": nota2, "nota3": nota3, "promedio": promedio, "ruta_estudio": ruta_estudio}
+    return {"nota1": nota1, "nota2": nota2, "nota3": nota3, "promedio": promedio, "resultado": resultado , "ruta_estudio": ruta_estudio}
 
 # Función principal
 def main():
@@ -77,7 +79,7 @@ def main():
 
     if estudiante:
         # Lista de módulos
-        modulos = ["Módulo 1", "Módulo 2", "Módulo 3", "Módulo 4", "Módulo 5"]
+        modulos = ["Modulo 1", "Modulo 2", "Modulo 3", "Modulo 4", "Modulo 5"]
 
         # Mostrar los módulos disponibles
         print("Módulos disponibles:")
