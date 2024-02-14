@@ -272,12 +272,10 @@ def matricular_estudiantes():
 def asignar_profesor_a_clase():
     clases = cargar_datos2()
 
-    # Mostrar clases disponibles
     print("Clases disponibles:")
     for clase in clases["clases"]:
         print(f"Clase {clase['nb']}: Duración - {clase['duracion']}")
 
-    # Pedir número de clase para asignar profesor
     while True:
         opcion_clase = input("Ingrese el número de la clase a la que desea asignar un profesor: ")
 
@@ -291,12 +289,10 @@ def asignar_profesor_a_clase():
         except ValueError:
             print("Por favor, ingrese un número válido.")
 
-    # Mostrar profesores disponibles
     print("\nProfesores disponibles:")
     for i, profesor in enumerate(clases["profesores"], start=1):
         print(f"{i}. {profesor['nombre']} - Rutas: {', '.join(profesor['rutas'])}")
 
-    # Pedir número de profesor
     while True:
         opcion_profesor = input("Ingrese el número del profesor que desea asignar a la clase: ")
 
@@ -310,16 +306,13 @@ def asignar_profesor_a_clase():
         except ValueError:
             print("Por favor, ingrese un número válido.")
 
-    # Asignar profesor y rutas a la clase
     clase_elegida["profesor"] = profesor_elegido["nombre"]
     clase_elegida["ruta"] = profesor_elegido["rutas"]
 
-    # Mostrar aulas disponibles
     print("\nAulas disponibles:")
     for i, aula in enumerate(clases["aulas"], start=1):
         print(f"{i}. {aula}")
 
-    # Pedir número de aula
     while True:
         opcion_aula = input("Ingrese el número del aula para la clase: ")
 
