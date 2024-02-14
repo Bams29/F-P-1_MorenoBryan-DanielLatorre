@@ -18,6 +18,37 @@ def buscar_estudiante(estudiantes, nombre):
 
 # Función para guardar las notas en un archivo JSON
 def guardar_notas(notas):
+    print(notas)
+    try:
+        with open('notas.json', 'r') as archivo:
+            datos = json.load(archivo)
+    except FileNotFoundError:
+        datos = []
+
+    # Verificar si el estudiante ya tiene notas registradas
+    encontrado = False
+    for estudiante in datos:
+        if estudiante.get('nombre') == notas['nombre_estudiante']:
+            # Verificar si el módulo ya tiene notas registradas
+            for modulo in estudiante['modulos']:
+                if modulo['nombre_modulo'] == notas['nombre_modulo']:
+                    modulo['notas'].append(notas)
+                    encontrado = True
+                    break
+            else:
+                estudiante['modulos'].append({"nombre_modulo": notas['nombre_modulo'], "notas": [notas]})
+                encontrado = True
+            break
+
+    if not encontrado:
+        datos.append({
+            "nombre": notas['nombre_estudiante'],
+            "modulos": [{"nombre_modulo": notas['nombre_modulo'], "notas": [notas]}]
+        })
+
+    with open('notas.json', 'w') as archivo:
+        json.dump(datos, archivo, indent=4)  # indent=4 para una salida JSON formateada
+
     try:
         with open('notas.json', 'r') as archivo:
             datos = json.load(archivo)
@@ -98,7 +129,7 @@ def main():
         notas_modulo = ingresar_notas_modulo(nombre_modulo_elegido)
         notas_modulo['nombre_estudiante'] = nombre_estudiante
         notas_modulo['nombre_modulo'] = nombre_modulo_elegido
-
+        
         # Guardar las notas en un archivo JSON
         guardar_notas(notas_modulo)
 
