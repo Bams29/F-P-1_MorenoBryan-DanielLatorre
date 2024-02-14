@@ -382,16 +382,38 @@ def listar_estudiantes_misma_ruta():
         with open("notas.json", "r", encoding="utf-8") as notas_file:
             datos_notas = json.load(notas_file)
 
-        profesores_rutas = {profesor["nombre"]: set(profesor["rutas"]) if isinstance(profesor["rutas"], list) else {profesor["rutas"]} for profesor in datos_clases["profesores"]}
+        print("Clases disponibles:")
+        for clase in datos_clases["clases"]:
+            print(f"{clase['nb']}. Profesor: {clase['profesor']} - Duración: {clase['duracion']} - Ruta: {', '.join(clase['ruta'])}")
 
-        print("\nEstudiantes con la misma ruta que los profesores:")
-        for estudiante in datos_notas:
-            for modulo in estudiante.get("modulos", []):
-                for nota in modulo.get("notas", []):
-                    ruta_estudio = nota.get("ruta_estudio", "").lower()
-                    nombre_modulo = nota.get("nombre_modulo", "")
-                    if nombre_modulo in profesores_rutas and ruta_estudio in profesores_rutas[nombre_modulo]:
-                        print(f"Estudiante: {estudiante['nombre']}, Ruta de Estudio: {ruta_estudio}, Módulo: {nombre_modulo}")
+        while True:
+            opcion_clase = input("Ingrese el número de la clase que desea consultar: ")
+
+            try:
+                opcion_clase = int(opcion_clase)
+                if 1 <= opcion_clase <= len(datos_clases["clases"]):
+                    clase_elegida = datos_clases["clases"][opcion_clase - 1]
+                    break
+                else:
+                    print("Opción fuera de rango.")
+            except ValueError:
+                print("Por favor, ingrese un número válido.")
+
+        profesor_clase = next((profesor for profesor in datos_clases["profesores"] if profesor["nombre"] == clase_elegida["profesor"]), None)
+
+        if profesor_clase:
+            ruta_profesor = profesor_clase["ruta_asignada"].lower()
+
+            print(f"\nEstudiantes con la misma ruta que el profesor {profesor_clase['nombre']} (Clase {opcion_clase}):")
+            for estudiante in datos_notas:
+                for modulo in estudiante.get("modulos", []):
+                    for nota in modulo.get("notas", []):
+                        ruta_estudio = nota.get("ruta_estudio", "").lower()
+                        nombre_modulo = nota.get("nombre_modulo", "")
+                        if nombre_modulo in clase_elegida["ruta"] and ruta_estudio == ruta_profesor:
+                            print(f"Estudiante: {estudiante['nombre']}, Ruta de Estudio: {ruta_estudio}, Módulo: {nombre_modulo}")
+        else:
+            print("Error: No se encontró el profesor asignado a la clase.")
 
     except FileNotFoundError:
         print("Archivos 'clases.json' o 'notas.json' no encontrados.")
