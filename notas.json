@@ -1,0 +1,236 @@
+[
+  {
+    "nombre": "Ana",
+    "modulos": [
+      {
+        "nombre_modulo": "Modulo 1",
+        "notas": [
+          {
+            "nota1": 55.0,
+            "nota2": 66.0,
+            "nota3": 77.0,
+            "promedio": 66.0,
+            "resultado": "",
+            "ruta_estudio": "NodeJS",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 1"
+          },
+          {
+            "nota1": 4.0,
+            "nota2": 3.0,
+            "nota3": 6.0,
+            "promedio": 4.333333333333333,
+            "resultado": "reprobado",
+            "ruta_estudio": "NodeJS",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 1"
+          },
+          {
+            "nota1": 4.0,
+            "nota2": 3.0,
+            "nota3": 6.0,
+            "promedio": 4.333333333333333,
+            "resultado": "reprobado",
+            "ruta_estudio": "NodeJS",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 1"
+          }
+        ]
+      },
+      {
+        "nombre_modulo": "Modulo 2",
+        "notas": [
+          {
+            "nota1": 77.0,
+            "nota2": 66.0,
+            "nota3": 55.0,
+            "promedio": 66.0,
+            "resultado": "",
+            "ruta_estudio": "Java",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 2"
+          },
+          {
+            "nombre_modulo": "Modulo 3",
+            "notas": [
+              {
+                "nota1": 0,
+                "nota2": 0,
+                "nota3": 0,
+                "promedio": 0,
+                "resultado": "",
+                "ruta_estudio": "",
+                "estado": "",
+                "nombre_estudiante": "",
+                "nombre_modulo": "Modulo 3"
+              }
+            ]
+          },
+          {
+            "nombre_modulo": "Modulo 4",
+            "notas": [
+              {
+                "nota1": 0,
+                "nota2": 0,
+                "nota3": 0,
+                "promedio": 0,
+                "resultado": "",
+                "ruta_estudio": "",
+                "estado": "",
+                "nombre_estudiante": "",
+                "nombre_modulo": "Modulo 4"
+              }
+            ]
+          },
+          {
+            "nombre_modulo": "Modulo 5",
+            "notas": [
+              {
+                "nota1": 0,
+                "nota2": 0,
+                "nota3": 0,
+                "promedio": 0,
+                "resultado": "",
+                "ruta_estudio": "",
+                "estado": "",
+                "nombre_estudiante": "",
+                "nombre_modulo": "Modulo 5"
+              }
+            ]
+          },
+          {
+            "nota1": 22.0,
+            "nota2": 33.0,
+            "nota3": 22.0,
+            "promedio": 25.666666666666668,
+            "resultado": "reprobado",
+            "rendimiento": "bajo",
+            "ruta_estudio": "Java",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 2"
+          },
+          {
+            "nota1": 22.0,
+            "nota2": 33.0,
+            "nota3": 22.0,
+            "promedio": 25.666666666666668,
+            "resultado": "reprobado",
+            "rendimiento": "bajo",
+            "ruta_estudio": "Java",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 2"
+          }
+        ]
+      },
+      {
+        "nombre_modulo": "Modulo 5",
+        "notas": [
+          {
+            "nota1": 22.0,
+            "nota2": 33.0,
+            "nota3": 44.0,
+            "promedio": 33.0,
+            "resultado": "reprobado",
+            "ruta_estudio": "Java",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 5"
+          },
+          {
+            "nota1": 22.0,
+            "nota2": 33.0,
+            "nota3": 44.0,
+            "promedio": 33.0,
+            "resultado": "reprobado",
+            "ruta_estudio": "Java",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 5"
+          },
+          {
+            "nota1": 44.0,
+            "nota2": 55.0,
+            "nota3": 66.0,
+            "promedio": 55.0,
+            "resultado": "reprobado",
+            "ruta_estudio": "Java",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 5"
+          },
+          {
+            "nota1": 44.0,
+            "nota2": 55.0,
+            "nota3": 66.0,
+            "promedio": 55.0,
+            "resultado": "reprobado",
+            "ruta_estudio": "Java",
+            "nombre_estudiante": "Ana",
+            "nombre_modulo": "Modulo 5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Juan",
+    "modulos": [
+      {
+        "nombre_modulo": "Modulo 2",
+        "notas": [
+          {
+            "nota1": 33.0,
+            "nota2": 44.0,
+            "nota3": 55.0,
+            "promedio": 44.0,
+            "ruta_estudio": "html",
+            "nombre_estudiante": "Juan",
+            "nombre_modulo": "Modulo 2"
+          }
+        ]
+      },
+      {
+        "nombre_modulo": "Modulo 1",
+        "notas": [
+          {
+            "nota1": 55.0,
+            "nota2": 66.0,
+            "nota3": 77.0,
+            "promedio": 66.0,
+            "resultado": "Aprobado",
+            "ruta_estudio": "Java",
+            "nombre_estudiante": "Juan",
+            "nombre_modulo": "Modulo 1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "pepe",
+    "modulos": [
+      {
+        "nombre_modulo": "Modulo 1",
+        "notas": [
+          {
+            "nota1": 33.0,
+            "nota2": 44.0,
+            "nota3": 55.0,
+            "promedio": 44.0,
+            "resultado": "reprobado",
+            "ruta_estudio": "Java",
+            "nombre_estudiante": "pepe",
+            "nombre_modulo": "Modulo 1"
+          },
+          {
+            "nota1": 33.0,
+            "nota2": 44.0,
+            "nota3": 55.0,
+            "promedio": 44.0,
+            "resultado": "reprobado",
+            "ruta_estudio": "Java",
+            "nombre_estudiante": "pepe",
+            "nombre_modulo": "Modulo 1"
+          }
+        ]
+      }
+    ]
+  }
+]

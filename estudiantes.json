@@ -7,19 +7,13 @@
     "acudiente": "Juan Gómez",
     "telefono_celular": "3123456789",
     "telefono_fijo": "4123456789",
-    "estado": "Inscrito",
-    "riesgo": "Bajo"
-  },
-  {
-    "Ti": "331233246",
-    "nombres": "Elena",
-    "apellidos": "Martínez",
-    "direccion": "Carrera 789, Ciudad C",
-    "acudiente": "Miguel Martínez",
-    "telefono_celular": "3109876543",
-    "telefono_fijo": "4323456789",
-    "estado": "Cursando",
-    "riesgo": "Alto"
+    "estado": "Aprobado",
+    "riesgo": "Bajo",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
   },
   {
     "Ti": "454353223",
@@ -30,7 +24,12 @@
     "telefono_celular": "3176543210",
     "telefono_fijo": "4423456789",
     "estado": "Graduado",
-    "riesgo": "Moderado"
+    "riesgo": "Moderado",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
   },
   {
     "Ti": "767675545",
@@ -41,7 +40,12 @@
     "telefono_celular": "3187654321",
     "telefono_fijo": "4523456789",
     "estado": "Expulsado",
-    "riesgo": "Alto"
+    "riesgo": "Alto",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
   },
   {
     "Ti": "656775675",
@@ -52,7 +56,12 @@
     "telefono_celular": "3112345678",
     "telefono_fijo": "4623456789",
     "estado": "Retirado",
-    "riesgo": "Bajo"
+    "riesgo": "Bajo",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
   },
   {
     "Ti": "765765777",
@@ -63,7 +72,12 @@
     "telefono_celular": "3123456789",
     "telefono_fijo": "4723456789",
     "estado": "Inscrito",
-    "riesgo": "Moderado"
+    "riesgo": "Moderado",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
   },
   {
     "Ti": "234234445",
@@ -74,7 +88,12 @@
     "telefono_celular": "3198765432",
     "telefono_fijo": "4823456789",
     "estado": "Aprobado",
-    "riesgo": "Alto"
+    "riesgo": "Alto",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
   },
   {
     "Ti": "932342343",
@@ -85,7 +104,12 @@
     "telefono_celular": "3109876543",
     "telefono_fijo": "4923456789",
     "estado": "Cursando",
-    "riesgo": "Bajo"
+    "riesgo": "Bajo",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
   },
   {
     "Ti": "323231233",
@@ -96,7 +120,12 @@
     "telefono_celular": "3176543210",
     "telefono_fijo": "5023456789",
     "estado": "Graduado",
-    "riesgo": "Moderado"
+    "riesgo": "Moderado",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
   },
   {
     "Ti": "112344334",
@@ -107,7 +136,12 @@
     "telefono_celular": "3187654321",
     "telefono_fijo": "5123456789",
     "estado": "Expulsado",
-    "riesgo": "Alto"
+    "riesgo": "Alto",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
   },
   {
     "Ti": "124453445",
@@ -118,7 +152,12 @@
     "telefono_celular": "3112345678",
     "telefono_fijo": "5223456789",
     "estado": "Retirado",
-    "riesgo": "Moderado"
+    "riesgo": "Moderado",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
   },
   {
     "Ti": "103458991",
@@ -129,7 +168,12 @@
     "telefono_celular": "3123456789",
     "telefono_fijo": "5323456789",
     "estado": "No aprobado",
-    "riesgo": "Alto"
+    "riesgo": "Alto",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
   },
   {
     "Ti": "144124144",
@@ -140,7 +184,12 @@
     "telefono_celular": "3198765432",
     "telefono_fijo": "5423456789",
     "estado": "Aprobado",
-    "riesgo": "Bajo"
+    "riesgo": "Bajo",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
   },
   {
     "Ti": "103458990",
@@ -151,7 +200,12 @@
     "telefono_celular": "3109876543",
     "telefono_fijo": "5523456789",
     "estado": "Cursando",
-    "riesgo": "Moderado"
+    "riesgo": "Moderado",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
   },
   {
     "Ti": "1102345678",
@@ -162,6 +216,43 @@
     "telefono_celular": "312345677",
     "telefono_fijo": "no tiene",
     "estado": "inscrito",
-    "riesgo": "bajo"
+    "riesgo": "bajo",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
+  },
+  {
+    "Ti": "23",
+    "nombres": "kenneth",
+    "apellidos": "ceballos",
+    "direccion": "cra 13",
+    "acudiente": "Sndra",
+    "telefono_celular": "321",
+    "telefono_fijo": "616",
+    "estado": "Aprobado",
+    "riesgo": "Alto",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
+  },
+  {
+    "Ti": "1122345678",
+    "nombres": "pepe",
+    "apellTIos": "lizaraso",
+    "direccion": "cra 12",
+    "acudiente": "mrimar",
+    "telefono_celular": "213244567",
+    "telefono_fijo": "no",
+    "estado": "inscrito",
+    "riesgo": "bajo",
+    "mo1": "",
+    "mo2": "",
+    "mo3": "",
+    "mo4": "",
+    "mo5": ""
   }
 ]
